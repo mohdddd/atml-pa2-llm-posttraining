@@ -28,3 +28,11 @@ data/*
 # Misc
 *.zip
 .DS_Store
+
+# --- student additions ---
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.ckpt
+storage/
