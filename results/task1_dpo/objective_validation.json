@@ -1,0 +1,21 @@
+{
+  "objective": {
+    "matches_manual_beta_0.03": true,
+    "starter_minus_manual_beta_0.03": 0.14210155864759555,
+    "matches_manual_beta_0.1": true,
+    "starter_minus_manual_beta_0.1": 0.508957485459077,
+    "matches_manual_beta_0.3": true,
+    "starter_minus_manual_beta_0.3": 1.5569563219725762,
+    "loss_at_pi_eq_ref": 0.6931471805599453,
+    "starter_loss_at_pi_eq_ref": 6.658967199737515,
+    "log2": 0.6931471805599453,
+    "pi_eq_ref_gives_log2": true,
+    "grad_raises_chosen": true,
+    "grad_lowers_rejected": true
+  },
+  "logprob_plumbing": {
+    "padded_vs_unpadded_max_abs_diff": 2.288818359375e-05,
+    "lean_vs_starter_token_logp_max_abs_diff": 7.2479248046875e-05,
+    "entropy_finite_nonneg": true
+  }
+}

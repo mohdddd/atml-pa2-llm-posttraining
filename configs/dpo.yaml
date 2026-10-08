@@ -13,3 +13,14 @@ max_grad_norm: 1.0
 standard_output: outputs/task1_dpo/standard
 length_output: outputs/task1_dpo/length_balanced
 results_dir: results/task1_dpo
+
+# ---- student additions: data rule + common evaluation protocol (same for every condition) ----
+# Pairs whose rendered prompt exceeds this many tokens are excluded everywhere (train, held-out,
+# generation prompts). 768 - 512 = 256 guarantees every kept response at least the generation cap.
+max_prompt_tokens: 512
+eval_pairs: null                 # null = all eligible held-out pairs
+eval_generation_prompts: null    # null = all eligible held-out prompts (one sampled response each)
+word_limit_samples: 4            # samples per word-limit prompt (10 prompts -> 40 responses)
+eval_gen_batch: 32
+eval_pair_batch: 4
+reward_max_length: 1024

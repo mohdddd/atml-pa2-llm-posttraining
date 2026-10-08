@@ -113,6 +113,32 @@ def response_sequence_logprobs(model, batch: dict):
     return (tok * mask).sum(-1), tok, mask
 
 
+def response_token_logprobs_lean(model, sequences, attention_mask, prompt_width, response_ids, with_entropy=False):
+    """Memory-lean equivalent of `response_token_logprobs` (student addition).
+
+    Asks the model for logits only at the positions that predict response tokens
+    (`logits_to_keep`), so a 32 x 768-token batch does not materialise 32 x 768 x 151k logits.
+    Returns per-token log-probs of `response_ids` [B, T] and, optionally, per-token entropy [B, T].
+    Checked against `response_token_logprobs` in task1_dpo/validate_objective.py.
+    """
+    width = response_ids.shape[1]
+    outputs = model(
+        input_ids=sequences,
+        attention_mask=attention_mask,
+        use_cache=False,
+        return_dict=True,
+        logits_to_keep=width + 1,
+    )
+    logits = outputs.logits[:, :width, :].float()   # position prompt_width-1+t predicts response token t
+    logz = torch.logsumexp(logits, dim=-1)
+    chosen = torch.gather(logits, -1, response_ids.unsqueeze(-1)).squeeze(-1) - logz
+    entropy = None
+    if with_entropy:
+        p = torch.softmax(logits, dim=-1)
+        entropy = logz - (p * logits).sum(-1)
+    return chosen, entropy
+
+
 @torch.no_grad()
 def score_reward_pairs(rm_model, rm_tokenizer, prompts, responses, max_length=1024):
     texts = []

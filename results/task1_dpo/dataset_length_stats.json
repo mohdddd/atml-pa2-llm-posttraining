@@ -1,0 +1,79 @@
+{
+  "tokenizer": "Qwen/Qwen2.5-1.5B-Instruct",
+  "matched_band_relative": 0.1,
+  "note": "Response lengths in tokens of the raw responses (before training-time truncation).",
+  "standard_train": {
+    "n_file": 1500,
+    "n_eligible": 1394,
+    "chosen_tokens_mean": 287.22094691535153,
+    "rejected_tokens_mean": 241.3780487804878,
+    "length_diff_mean": 45.8428981348637,
+    "length_diff_median": 20.0,
+    "frac_chosen_longer": 0.569583931133429,
+    "frac_rejected_longer": 0.41606886657101866,
+    "frac_within_matched_band": 0.13916786226685796,
+    "frac_chosen_longer_outside_band": 0.5064562410329986,
+    "frac_rejected_longer_outside_band": 0.35437589670014347,
+    "spearman_lengthdiff_vs_scoregap": 0.08839863199173056,
+    "frac_score_ties": 0.11190817790530846,
+    "length_only_predictor_accuracy": 0.569583931133429
+  },
+  "standard_eval": {
+    "n_file": 300,
+    "n_eligible": 272,
+    "chosen_tokens_mean": 280.4264705882353,
+    "rejected_tokens_mean": 251.8308823529412,
+    "length_diff_mean": 28.595588235294116,
+    "length_diff_median": 6.0,
+    "frac_chosen_longer": 0.5367647058823529,
+    "frac_rejected_longer": 0.4375,
+    "frac_within_matched_band": 0.14705882352941177,
+    "frac_chosen_longer_outside_band": 0.46691176470588236,
+    "frac_rejected_longer_outside_band": 0.3860294117647059,
+    "spearman_lengthdiff_vs_scoregap": 0.143934099328065,
+    "frac_score_ties": 0.13970588235294118,
+    "length_only_predictor_accuracy": 0.5367647058823529
+  },
+  "length_balanced_train": {
+    "n_file": 1500,
+    "n_eligible": 1384,
+    "chosen_tokens_mean": 157.59176300578034,
+    "rejected_tokens_mean": 152.22326589595374,
+    "length_diff_mean": 5.368497109826589,
+    "length_diff_median": 0.0,
+    "frac_chosen_longer": 0.4913294797687861,
+    "frac_rejected_longer": 0.4869942196531792,
+    "frac_within_matched_band": 0.33309248554913296,
+    "frac_chosen_longer_outside_band": 0.33309248554913296,
+    "frac_rejected_longer_outside_band": 0.3338150289017341,
+    "spearman_lengthdiff_vs_scoregap": 0.06901887646701248,
+    "frac_score_ties": 0.1365606936416185,
+    "length_only_predictor_accuracy": 0.4913294797687861,
+    "stratum_counts": {
+      "preferred_longer": 461,
+      "length_matched": 461,
+      "rejected_longer": 462
+    }
+  },
+  "length_stratified_eval": {
+    "n_file": 246,
+    "n_eligible": 224,
+    "chosen_tokens_mean": 148.09821428571428,
+    "rejected_tokens_mean": 146.14732142857142,
+    "length_diff_mean": 1.9508928571428572,
+    "length_diff_median": -1.0,
+    "frac_chosen_longer": 0.4732142857142857,
+    "frac_rejected_longer": 0.5089285714285714,
+    "frac_within_matched_band": 0.35267857142857145,
+    "frac_chosen_longer_outside_band": 0.3125,
+    "frac_rejected_longer_outside_band": 0.33482142857142855,
+    "spearman_lengthdiff_vs_scoregap": 0.07825218876788384,
+    "frac_score_ties": 0.12946428571428573,
+    "length_only_predictor_accuracy": 0.4732142857142857,
+    "stratum_counts": {
+      "preferred_longer": 70,
+      "length_matched": 79,
+      "rejected_longer": 75
+    }
+  }
+}

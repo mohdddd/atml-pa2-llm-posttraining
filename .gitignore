@@ -36,3 +36,7 @@ data/*
 *.safetensors
 *.ckpt
 storage/
+# smoke tests and preflight timing runs are never results
+results/smoke/
+results/preflight/
+results/logs/*preflight*
