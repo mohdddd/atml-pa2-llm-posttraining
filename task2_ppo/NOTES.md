@@ -33,3 +33,14 @@ grad-norm clip 1.0; sampling temperature 0.7, top-p 0.9; seed 6304.
 - Clipping study:
 - KL-pressure study:
 - Critic behaviour:
+
+## Known limitation found after the run (applies to Task 1–3 held-out generation)
+The sampling seed is reset once before the first evaluation batch, not per batch. When two models' first batch
+ends at a different step (its longest response differs), the random stream of every later batch shifts, so later
+batches are independent samples rather than common-random-number pairs. Verified on the Task 2/3 outputs: e.g.
+midpoint vs ε-forks share 24/32 identical responses in batch 1 and ≤2/32 in later batches. Consequences:
+- all per-model means/SEMs are valid (same prompts, same decoding, same protocol);
+- paired differences vs the midpoint and their bootstrap CIs remain valid but are wider than a fully paired design;
+- the `identical_text_vs_*` columns (and Task 1's identical-to-SFT diagnostic) do NOT measure how much a policy
+  changed and should not be interpreted as such.
+Not re-run because of the deadline; Tasks 4–5 use deterministic decoding and are unaffected.
