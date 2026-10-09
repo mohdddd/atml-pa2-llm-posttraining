@@ -110,25 +110,27 @@ python -m task3_grpo.compare_normalization --config configs/grpo.yaml
 
 ### Task 4 - Safety calibration
 
-The judge loader/parser are supplied. You must implement the requested generation aggregation and evaluation.
+Needs the three standard adapters at `outputs/task1_dpo/standard`, `outputs/task2_ppo/standard`,
+`outputs/task3_grpo/standard` (`python -m scripts.link_adapters` finds them in attached Kaggle notebook outputs).
+Design record: `task4_safety/NOTES.md`.
 
 ```bash
-python -m task4_safety.generate_responses --config configs/feedback.yaml
-python -m task4_safety.judge_responses --config configs/feedback.yaml
-python -m task4_safety.make_audit_sheet --config configs/feedback.yaml
-python -m task4_safety.evaluate_safety --config configs/feedback.yaml
+bash task4_safety/run_all.sh gpu     # link adapters, generate (SFT/DPO/PPO/GRPO), blinded audit sheet, AI judge, rates
+# fill results/task4_safety/manual_audit_sheet.csv (manual_label column) without opening judged_*.jsonl, then:
+bash task4_safety/run_all.sh audit   # judge/manual agreement (CPU)
 ```
 
 ### Task 5 - RLVR vs RLAIF
 
-The exact verifier and pairwise AI judge are supplied; you implement the evaluation/analysis.
+Design record: `task5_feedback/NOTES.md`.
 
 ```bash
-python -m task5_feedback.evaluate_math --config configs/feedback.yaml --dataset gsm
-python -m task5_feedback.score_perturbations --config configs/feedback.yaml
-python -m task5_feedback.evaluate_math --config configs/feedback.yaml --dataset transfer
-python -m task5_feedback.compare_feedback --config configs/feedback.yaml
+bash task5_feedback/run_all.sh gpu   # GSM8K + SVAMP generation, pairwise judge, controlled diagnostics, tables
 ```
+
+Tasks 4 and 5 run together on two GPUs:
+`python -m scripts.run_lanes --tag task45 "bash task4_safety/run_all.sh gpu" "bash task5_feedback/run_all.sh gpu"`
+(`PREFLIGHT=1` in front of each lane command = small subsets, outputs under `results/preflight/`).
 
 ## 6. Reproducibility rules
 
