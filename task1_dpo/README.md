@@ -11,6 +11,7 @@
 | `ablate_beta.py` | Step 2: β ∈ {0.03, 0.10, 0.30} short forks + evaluation |
 | `analyze_length.py` | Step 3: dataset length statistics, length-balanced training, stratified evaluation |
 | `summarize.py` | Tables → `report/tables/task1_*.csv`, figures → `report/figures/task1/` |
+| `diagnostics.py` | CPU-only: paired reward vs SFT (bootstrap CI), identical-to-SFT fraction, summed vs per-token stratum accuracy, fp16 skipped steps |
 | `utils.py` | Shared Task 1 helpers (eligibility rule, pair log-probs, generation scoring) — *student addition* |
 | `run_all.sh` | The exact command sequence, as two GPU lanes + summary — *student addition* |
 
