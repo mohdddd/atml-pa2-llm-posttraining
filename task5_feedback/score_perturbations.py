@@ -74,7 +74,13 @@ def raw_preference(judge: PairwiseAIJudge, problem: str, first: str, second: str
                                eos_token_id=judge.tokenizer.eos_token_id)
     decoded = judge.tokenizer.decode(out[0, ids.shape[1]:], skip_special_tokens=True).strip().upper()
     m = re.search(r"\b(A|B|TIE)\b", decoded)
-    return m.group(1) if m else "TIE"
+    return (m.group(1) if m else "TIE"), decoded, bool(m)
+
+
+def _pairs_of(g):
+    """The 10 (lower-index, higher-index) response pairs that group_rewards judges for one problem."""
+    r = [g[v]["response"] for v in VARIANT_ORDER]
+    return [(r[i], r[j]) for i in range(len(r)) for j in range(i + 1, len(r))]
 
 
 def outcome_of(pref_first_vs_second, better_first: bool):
@@ -116,18 +122,22 @@ def main():
         for name, x, y, better_first in PAIRS:
             ix, iy = VARIANT_ORDER.index(x), VARIANT_ORDER.index(y)
             # released compare(): the same call group_rewards made (lower variant index first) -> cached
-            j = judge.compare(q, resp[VARIANT_ORDER[min(ix, iy)]], resp[VARIANT_ORDER[max(ix, iy)]])
+            lo_r, hi_r = resp[VARIANT_ORDER[min(ix, iy)]], resp[VARIANT_ORDER[max(ix, iy)]]
+            j = judge.compare(q, lo_r, hi_r)
+            raw = judge.raw.get(judge._key(q, lo_r, hi_r), {})
             if ix > iy:
                 j = {"A": "B", "B": "A", "TIE": "TIE"}[j]
             v = "A" if rlvr[x] > rlvr[y] else ("B" if rlvr[y] > rlvr[x] else "TIE")
             pairs.append({"problem_id": pid, "pair": name, "first": x, "second": y, "better_first": better_first,
-                          "judge_pref": j, "verifier_pref": v,
+                          "judge_pref": j, "verifier_pref": v, "judge_decoded": raw.get("decoded"),
+                          "judge_parsed": raw.get("parsed"),
                           "judge_outcome": outcome_of(j, better_first), "verifier_outcome": outcome_of(v, better_first)})
-            fwd = raw_preference(judge, q, resp[x], resp[y])
-            rev = raw_preference(judge, q, resp[y], resp[x])
+            fwd, fwd_txt, fwd_ok = raw_preference(judge, q, resp[x], resp[y])
+            rev, rev_txt, rev_ok = raw_preference(judge, q, resp[y], resp[x])
             rev_as_fwd = {"A": "B", "B": "A", "TIE": "TIE"}[rev]
             order.append({"problem_id": pid, "pair": name, "first_shown_first": fwd, "second_shown_first": rev,
                           "consistent": fwd == rev_as_fwd, "position_A_chosen": [fwd == "A", rev == "A"],
+                          "decoded": [fwd_txt, rev_txt], "parsed": [fwd_ok, rev_ok],
                           "outcome_first_shown_first": outcome_of(fwd, better_first),
                           "outcome_second_shown_first": outcome_of(rev_as_fwd, better_first)})
         print(f"[diag] problem {pid} done ({time.perf_counter() - t0:.0f}s)", flush=True)
@@ -147,6 +157,7 @@ def main():
         rows = [r for r in pairs if r["pair"] == name]
         orows = [r for r in order if r["pair"] == name]
         pair_summary[name] = {"verifier": rates(rows, "verifier_outcome", bf), "judge": rates(rows, "judge_outcome", bf),
+                              "judge_ties_unparsed": sum(1 for r in rows if r["judge_pref"] == "TIE" and r["judge_parsed"] is False),
                               "judge_order_consistency": round(float(np.mean([r["consistent"] for r in orows])), 4),
                               "judge_fixed_order_first_shown_first": rates(orows, "outcome_first_shown_first", bf),
                               "judge_fixed_order_second_shown_first": rates(orows, "outcome_second_shown_first", bf)}
@@ -168,6 +179,10 @@ def main():
     summ = {"pairs": pair_summary, "sensitivity": S, "variants": var_summary,
             "judge_position_A_rate_fixed_order": round(float(np.mean(pos_a)), 4),
             "judge_order_consistency_all_pairs": round(float(np.mean([r["consistent"] for r in order])), 4),
+            "judge_unparsed_outputs_all_10_pairs": sum(1 for k, v in judge.raw.items() if not v["parsed"]
+                                                       and any(k == judge._key(groups[p]["clean_correct"]["question"], a, b)
+                                                               for p in pids for a, b in _pairs_of(groups[p]))),
+            "judge_unparsed_outputs_order_check": sum(1 for r in order for ok in r["parsed"] if not ok),
             "n_problems": len(pids), "wall_s": round(time.perf_counter() - t0, 1), "meta": run_metadata(cfg)}
     save_json(out / "summary.json", summ)
     print(json.dumps({"sensitivity": S, "pairs": {k: {"verifier": v["verifier"], "judge": v["judge"],

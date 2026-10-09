@@ -28,6 +28,11 @@ cache) · Controlled Reward Diagnostic Set (20 problems × 5 variants).
 6. **Position check.** Every controlled pair is also judged in both presentation orders without the orientation swap
    (same rubric and decoding) → order-consistency and position-A rate. This is diagnostic; the released `compare`
    result is the primary judge preference.
-7. **Paired accuracy differences vs SFT** with a 10 000-sample paired bootstrap (seed 6304).
+7. **Judge output audit (added after the preflight, before the full run).** `PairwiseAIJudge.compare` additionally
+   stores the raw decoded text (`judge_cache_raw.json`; judgements unchanged). A TIE whose output contains no
+   A/B/TIE token (the released parser's fallback) is counted separately as an unparsed tie. A secondary win rate
+   scores byte-identical response pairs as ties instead of by the judge (the preflight showed the judge picking a
+   side on identical texts); the primary win rate stays the fixed-judge protocol.
+8. **Paired accuracy differences vs SFT** with a 10 000-sample paired bootstrap (seed 6304).
 
 ## Hypotheses (write these yourself before you look at the results)
