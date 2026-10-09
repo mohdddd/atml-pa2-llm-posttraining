@@ -1,33 +1,15 @@
-from __future__ import annotations
+"""Held-out evaluation of one frozen PPO policy (common protocol in common/rl.py).
 
-import argparse
+    python -m task2_ppo.evaluate --config configs/ppo.yaml --adapter outputs/task2_ppo/standard --name standard
+    python -m task2_ppo.evaluate --config configs/ppo.yaml --adapter checkpoints/ppo_midpoint_policy --name midpoint
 
-from common.data import load_yaml, read_jsonl
-from common.models import load_policy, load_reward_model, load_tokenizer
-
-
-def load_evaluation_bundle(config_path: str, adapter: str):
-    cfg = load_yaml(config_path)
-    return {
-        "cfg": cfg,
-        "rows": read_jsonl(cfg["paths"]["rl_prompt_eval"]),
-        "tokenizer": load_tokenizer(cfg["base_model"]),
-        "policy": load_policy(cfg, adapter_path=adapter, trainable=False),
-        "reward": load_reward_model(cfg),
-    }
-
-
-def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--config", default="configs/ppo.yaml")
-    ap.add_argument("--adapter", required=True)
-    ap.add_argument("--name", default="standard")
-    args = ap.parse_args()
-    load_evaluation_bundle(args.config, args.adapter)
-    raise NotImplementedError(
-        "TODO(student): implement the common held-out generation/evaluation protocol and save machine-readable metrics/examples."
-    )
-
+Protocol: eligible prompts of data/rl_prompt_pool_eval.jsonl (rendered prompt <= max_prompt_length),
+one sampled response per prompt (configs/base.yaml decoding, cap eval_max_response_length), same seed
+and batch composition for every model; reward-model score, sampled-response KL to the reference
+(LoRA disabled), token entropy, length, EOS/truncation.
+Outputs: results/task2_ppo/eval/<name>/{generations.jsonl, summary.json}.
+"""
+from common.rl import evaluate_cli
 
 if __name__ == "__main__":
-    main()
+    evaluate_cli("configs/ppo.yaml")

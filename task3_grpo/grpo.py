@@ -11,10 +11,33 @@ def group_relative_advantages(rewards: torch.Tensor, group_ids: torch.Tensor, ep
     `group_ids[i]` identifies which prompt produced reward `rewards[i]`.
     Validate this implementation against the group-relative definition in the assignment manual.
     """
-    # Starter implementation: students must validate the grouping logic carefully.
-    mean = rewards.mean()
-    std = rewards.std(unbiased=False).clamp_min(eps)
-    return (rewards - mean) / std
+    # Defect fix: the starter normalised with the mean/std of the WHOLE batch, mixing prompts. The
+    # manual's advantage is A_k = (r_k - mu_r) / (sigma_r + eps) with mu_r, sigma_r computed inside the
+    # K-completion group of the same prompt. sigma_r is the population std (1/K), as in mu_r = (1/K) sum r_j.
+    rewards = rewards.float()
+    group_ids = torch.as_tensor(group_ids, device=rewards.device)
+    adv = torch.zeros_like(rewards)
+    for g in torch.unique(group_ids):
+        sel = group_ids == g
+        r = rewards[sel]
+        adv[sel] = (r - r.mean()) / (r.std(unbiased=False) + eps)
+    return adv
+
+
+def group_reward_stats(rewards: torch.Tensor, group_ids: torch.Tensor, tol: float = 1e-6):
+    """Per-group population std and the uninformative flag (std <= tol, the advantage helper's eps)
+    (student addition). Returns a list of dicts in order of first appearance of each group."""
+    rewards = rewards.float()
+    group_ids = torch.as_tensor(group_ids, device=rewards.device)
+    out, seen = [], []
+    for g in group_ids.tolist():
+        if g in seen:
+            continue
+        seen.append(g)
+        r = rewards[group_ids == g]
+        sd = float(r.std(unbiased=False))
+        out.append({"group": g, "mean": float(r.mean()), "std": sd, "uninformative": sd <= tol})
+    return out
 
 
 def grpo_policy_loss(

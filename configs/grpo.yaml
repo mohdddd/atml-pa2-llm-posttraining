@@ -16,3 +16,9 @@ output: outputs/task3_grpo/standard
 results_dir: results/task3_grpo
 group_cache: cached/grpo_k_cache.jsonl
 cache_generation_cap: 768
+
+# --- student additions (Task 3 orchestration) ---
+reward_max_length: 1280         # same reward-model context as Task 2
+eval_max_response_length: 768   # frozen held-out evaluation cap (same as Task 2 and the K-cache)
+eval_batch_size: 32
+eval_prompts: null              # null = all eligible held-out prompts

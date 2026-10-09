@@ -32,3 +32,11 @@ max_grad_norm: 1.0
 output: outputs/task2_ppo/standard
 results_dir: results/task2_ppo
 cached_rollouts: cached/ppo_rollout.pt
+
+# --- student additions (Task 2 orchestration) ---
+eval_batch_size: 32        # held-out generation batch (same for every model)
+eval_prompts: null         # null = all eligible held-out prompts (rendered prompt <= max_prompt_length)
+cached_minibatch: 8        # cached-rollout clipping study: rollouts per optimizer step (32 rollouts -> 4 steps/epoch)
+cached_max_rollouts: null  # null = the full supplied cached batch
+# Forks: clip study = clip_values at kl_beta 0.10; KL study = kl_values at clip_epsilon 0.20.
+# The (eps 0.20, beta 0.10) fork is shared by both studies and run once.
