@@ -12,3 +12,14 @@ policies:
   grpo: outputs/task3_grpo/standard
   rlvr: checkpoints/rlvr_policy
   rlaif: checkpoints/rlaif_policy
+
+# --- student additions (Tasks 4 and 5); see task4_safety/NOTES.md and task5_feedback/NOTES.md ---
+# Task 4: one deterministic (greedy) response per policy and XSTest prompt, fixed prompt order and batches.
+safety_batch_size: 32
+safety_max_prompt_length: 256      # every XSTest prompt fits (checked; the run stops otherwise)
+safety_limit_per_class: null       # preflight only: first N SAFE + first N UNSAFE prompts
+# Task 5: greedy decoding for every policy; same batches; judge sees the problem text, never the gold answer.
+math_batch_size: 32
+math_max_prompt_length: 512        # every GSM8K / SVAMP prompt fits (checked)
+math_limit: null                   # preflight only: first N items of each math set
+diagnostic_limit: null             # preflight only: first N diagnostic problems
