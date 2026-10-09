@@ -41,6 +41,7 @@ def policy_table(summ, dataset):
             c = summ["pairwise"][f"{p}_vs_sft"]
             d = s["accuracy_diff_vs_sft"]
             row.update({"ai_win_rate_vs_sft": c["win_rate_a"], "wins": c["wins_a"], "ties": c["ties"], "losses": c["losses_a"],
+                        "ties_unparsed": c["ties_unparsed"], "win_rate_identical_as_tie": c["win_rate_a_identical_as_tie"],
                         "acc_diff_vs_sft": d[0], "acc_diff_ci_lo": d[1], "acc_diff_ci_hi": d[2],
                         "verifier_judge_agreement_3way": c["verifier_judge_agreement_3way"],
                         "identical_text_vs_sft": c["identical_text"]})
@@ -89,11 +90,14 @@ def main():
                          "prefers_first_rate": r.get("first"), "prefers_second_rate": r.get("second"),
                          "judge_order_A_shown_first": json.dumps(ps["judge_fixed_order_first_shown_first"]) if mech == "judge" else None,
                          "judge_order_B_shown_first": json.dumps(ps["judge_fixed_order_second_shown_first"]) if mech == "judge" else None,
-                         "judge_order_consistency": ps["judge_order_consistency"] if mech == "judge" else None})
+                         "judge_order_consistency": ps["judge_order_consistency"] if mech == "judge" else None,
+                         "judge_ties_unparsed": ps["judge_ties_unparsed"] if mech == "judge" else None})
     pairs_df = pd.DataFrame(prow)
     pairs_df.to_csv(tab / "task5_diagnostic_pairs.csv", index=False)
     srows = [{"mechanism": m, **v} for m, v in d["sensitivity"].items()]
     srows[1].update({"judge_position_A_rate_fixed_order": d["judge_position_A_rate_fixed_order"],
+                     "judge_unparsed_outputs_all_10_pairs": d["judge_unparsed_outputs_all_10_pairs"],
+                     "judge_unparsed_outputs_order_check": d["judge_unparsed_outputs_order_check"],
                      "judge_order_consistency_controlled_pairs": d["judge_order_consistency_all_pairs"]})
     pd.DataFrame(srows).to_csv(tab / "task5_diagnostic_sensitivity.csv", index=False)
     pd.DataFrame([{"variant": k, **v} for k, v in d["variants"].items()]).to_csv(tab / "task5_diagnostic_variants.csv", index=False)

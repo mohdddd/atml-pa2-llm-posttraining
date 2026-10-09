@@ -129,7 +129,9 @@ def stage_judge(cfg, dataset, overwrite):
         for i, (ra, rb) in enumerate(zip(gens[a], gens[b])):
             assert ra["item_id"] == rb["item_id"]
             pref = judge.compare(ra["question"], ra["response"], rb["response"])
+            raw = judge.raw.get(judge._key(ra["question"], ra["response"], rb["response"]), {})
             recs.append({"item_id": ra["item_id"], "a": a, "b": b, "judge": pref,
+                         "judge_decoded": raw.get("decoded"), "judge_parsed": raw.get("parsed"),
                          "identical_text": ra["response"] == rb["response"],
                          "exact_a": ra["exact"], "exact_b": rb["exact"]})
             if (i + 1) % 50 == 0:
@@ -160,10 +162,16 @@ def pairwise_stats(recs):
     v = np.array([verifier_pref(r["exact_a"], r["exact_b"]) for r in recs])
     dec = v != "TIE"
     n = len(recs)
+    score = {"A": 1.0, "TIE": 0.5, "B": 0.0}
     return {
         "n": n,
-        "win_rate_a": round(float(np.mean([{"A": 1.0, "TIE": 0.5, "B": 0.0}[x] for x in j])), 4) if n else None,
+        "win_rate_a": round(float(np.mean([score[x] for x in j])), 4) if n else None,
         "wins_a": int((j == "A").sum()), "ties": int((j == "TIE").sum()), "losses_a": int((j == "B").sum()),
+        # TIE from an output with no A/B/TIE token (released parser falls back to TIE) vs an explicit TIE
+        "ties_unparsed": int(sum(1 for r in recs if r["judge"] == "TIE" and r.get("judge_parsed") is False)),
+        # secondary: byte-identical response pairs scored as ties instead of by the judge
+        "win_rate_a_identical_as_tie": round(float(np.mean([0.5 if r["identical_text"] else score[r["judge"]]
+                                                            for r in recs])), 4) if n else None,
         "identical_text": int(sum(r["identical_text"] for r in recs)),
         "judge_on_identical_text": {k: int(sum(1 for r in recs if r["identical_text"] and r["judge"] == k)) for k in ("A", "B", "TIE")},
         "verifier_judge_agreement_3way": round(float((v == j).mean()), 4) if n else None,
@@ -214,7 +222,8 @@ def stage_summary(cfg, dataset):
         print(f"[{dataset}] {p:5s} acc={s['accuracy']:.3f} format={s['format_compliance']:.3f} "
               f"len={s['len_mean']}±{s['len_sd']} trunc={s['truncation_rate']:.3f} {s['failure_types']}")
     for k, s in comps.items():
-        print(f"[{dataset}] {k}: win={s['win_rate_a']} (W{s['wins_a']}/T{s['ties']}/L{s['losses_a']}) "
+        print(f"[{dataset}] {k}: win={s['win_rate_a']} (W{s['wins_a']}/T{s['ties']}[unparsed {s['ties_unparsed']}]/L{s['losses_a']}) "
+              f"win_identical_as_tie={s['win_rate_a_identical_as_tie']} "
               f"identical={s['identical_text']} agree3={s['verifier_judge_agreement_3way']} "
               f"decisive n={s['verifier_decisive_n']} agree={s['judge_agrees_when_verifier_decisive']}")
 

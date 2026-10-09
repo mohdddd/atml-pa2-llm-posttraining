@@ -43,6 +43,10 @@ class PairwiseAIJudge:
             self.cache = json.loads(self.cache_path.read_text(encoding="utf-8"))
         else:
             self.cache = {}
+        # Student addition (does not change any judgement): the raw decoded judge text per cache key, so that
+        # explicit "TIE" answers can be told apart from outputs with no A/B/TIE token (which fall back to TIE).
+        self.raw_path = self.cache_path.with_name(self.cache_path.stem + "_raw.json")
+        self.raw = json.loads(self.raw_path.read_text(encoding="utf-8")) if self.raw_path.exists() else {}
 
         self.tokenizer = AutoTokenizer.from_pretrained(
             cfg["ai_judge_model"], padding_side="left", use_fast=True
@@ -101,6 +105,8 @@ class PairwiseAIJudge:
         self.cache[key] = result
         self.cache_path.parent.mkdir(parents=True, exist_ok=True)
         self.cache_path.write_text(json.dumps(self.cache, indent=2), encoding="utf-8")
+        self.raw[key] = {"decoded": decoded, "parsed": bool(m), "swap": swap}
+        self.raw_path.write_text(json.dumps(self.raw, indent=2), encoding="utf-8")
         return result
 
     def group_rewards(self, problem: str, responses: list[str]):
