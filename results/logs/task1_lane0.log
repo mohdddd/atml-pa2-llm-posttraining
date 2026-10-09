@@ -1,0 +1,42 @@
+### 2026-10-09 00:00:35 GPU=0 CMD: bash task1_dpo/run_all.sh lane0
+[standard] beta=0.1 pairs=1394 (dropped 106) microbatches/epoch=697 optimizer_steps=88 fp16_scaler=True
+[standard] step 1/88 loss=0.6931 acc=0.000 margin=0.000 gnorm=1.947 t=15.9s vram=8.379GiB
+[standard] step 10/88 loss=0.6923 acc=0.625 margin=0.017 gnorm=1.801 t=146.8s vram=8.389GiB
+[standard] step 20/88 loss=0.6897 acc=0.688 margin=0.069 gnorm=1.949 t=291.3s vram=8.389GiB
+[standard] step 30/88 loss=0.6911 acc=0.688 margin=0.041 gnorm=2.169 t=435.5s vram=8.389GiB
+[standard] step 40/88 loss=0.6885 acc=0.750 margin=0.094 gnorm=1.825 t=584.0s vram=8.389GiB
+[standard] step 50/88 loss=0.6855 acc=0.688 margin=0.155 gnorm=1.799 t=728.8s vram=8.389GiB
+[standard] step 60/88 loss=0.6738 acc=0.750 margin=0.400 gnorm=2.219 t=870.0s vram=8.389GiB
+[standard] step 70/88 loss=0.6728 acc=0.812 margin=0.431 gnorm=2.330 t=1017.7s vram=8.389GiB
+[standard] step 80/88 loss=0.6857 acc=0.625 margin=0.179 gnorm=2.090 t=1170.1s vram=8.389GiB
+[standard] step 88/88 loss=0.7360 acc=0.500 margin=-0.780 gnorm=8.289 t=1276.5s vram=8.389GiB
+[standard] done in 21.3 min, peak VRAM 8.389 GiB -> /kaggle/working/atml-pa2-llm-posttraining/outputs/task1_dpo/standard
+[eval standard] heldout: {'n': 272, 'preference_accuracy': 0.6581, 'margin_mean': 0.4108, 'margin_median': 0.3889, 'dpo_loss_own_beta': 0.6748, 'dpo_loss_beta_0.10': 0.6748, 'beta': 0.1, 'chosen_logratio_mean': -0.3386, 'rejected_logratio_mean': -0.7493, 'n_dropped_by_prompt_rule': 28} (142.4s)
+[eval standard] generate: {'n': 272, 'length_mean': 157.2132, 'length_std': 104.2444, 'length_median': 201.5, 'length_iqr': 208.25, 'truncation_rate': 0.4706, 'kl_token_mean': 0.0002, 'kl_seq_mean': 0.0385, 'reward_mean': 1.2903, 'reward_std': 1.2313, 'reward_sem': 0.0747} (239.9s)
+[eval standard] wordlimit: {'n_responses': 40, 'samples_per_prompt': 4, 'compliance_rate': 0.6, 'words_mean': 38.15, 'words_std': 18.4412, 'prompts_all_compliant': 4, 'tokens_mean': 45.45} (11.0s)
+[eval standard] stratified: {'n_dropped_by_prompt_rule': 22} (79.8s)
+[stats] standard_train: n=1394 chosen_longer=0.570 diff_mean=45.8 spearman(diff,gap)=0.089
+[stats] standard_eval: n=272 chosen_longer=0.537 diff_mean=28.6 spearman(diff,gap)=0.130
+[stats] length_balanced_train: n=1384 chosen_longer=0.491 diff_mean=5.4 spearman(diff,gap)=0.077
+[stats] length_stratified_eval: n=224 chosen_longer=0.473 diff_mean=2.0 spearman(diff,gap)=0.078
+$ -m task1_dpo.train --config configs/dpo.yaml --run-name length_balanced --dataset dpo_length_train --output outputs/task1_dpo/length_balanced --beta 0.1
+[length_balanced] beta=0.1 pairs=1384 (dropped 116) microbatches/epoch=692 optimizer_steps=87 fp16_scaler=True
+[length_balanced] step 1/87 loss=0.6931 acc=0.000 margin=0.000 gnorm=1.618 t=9.7s vram=6.901GiB
+[length_balanced] step 10/87 loss=0.6937 acc=0.438 margin=-0.011 gnorm=1.805 t=101.5s vram=8.386GiB
+[length_balanced] step 20/87 loss=0.6903 acc=0.500 margin=0.058 gnorm=1.655 t=203.1s vram=8.386GiB
+[length_balanced] step 30/87 loss=0.6886 acc=0.500 margin=0.095 gnorm=1.875 t=305.0s vram=8.386GiB
+[length_balanced] step 40/87 loss=0.6866 acc=0.625 margin=0.136 gnorm=1.567 t=410.1s vram=8.386GiB
+[length_balanced] step 50/87 loss=0.6778 acc=0.750 margin=0.322 gnorm=2.069 t=515.7s vram=8.386GiB
+[length_balanced] step 60/87 loss=0.6753 acc=0.625 margin=0.377 gnorm=1.775 t=625.2s vram=8.386GiB
+[length_balanced] step 70/87 loss=0.6640 acc=0.625 margin=0.658 gnorm=1.650 t=720.9s vram=8.386GiB
+[length_balanced] step 80/87 loss=0.6737 acc=0.562 margin=0.491 gnorm=2.150 t=823.1s vram=8.386GiB
+[length_balanced] step 87/87 loss=0.6847 acc=0.375 margin=0.319 gnorm=2.507 t=890.0s vram=8.386GiB
+[length_balanced] done in 14.8 min, peak VRAM 8.386 GiB -> /kaggle/working/atml-pa2-llm-posttraining/outputs/task1_dpo/length_balanced
+$ -m task1_dpo.evaluate --config configs/dpo.yaml --adapter outputs/task1_dpo/standard --name standard --beta 0.1 --parts stratified
+[eval standard] all requested parts already done; skipping.
+$ -m task1_dpo.evaluate --config configs/dpo.yaml --adapter outputs/task1_dpo/length_balanced --name length_balanced --beta 0.1 --parts heldout,stratified,generate,wordlimit
+[eval length_balanced] heldout: {'n': 272, 'preference_accuracy': 0.6213, 'margin_mean': 0.5702, 'margin_median': 0.4806, 'dpo_loss_own_beta': 0.6715, 'dpo_loss_beta_0.10': 0.6715, 'beta': 0.1, 'chosen_logratio_mean': -1.3362, 'rejected_logratio_mean': -1.9064, 'n_dropped_by_prompt_rule': 28} (142.1s)
+[eval length_balanced] stratified: {'n_dropped_by_prompt_rule': 22} (79.2s)
+[eval length_balanced] generate: {'n': 272, 'length_mean': 159.1213, 'length_std': 104.6009, 'length_median': 214.5, 'length_iqr': 215.25, 'truncation_rate': 0.4706, 'kl_token_mean': 0.0027, 'kl_seq_mean': 0.4237, 'reward_mean': 1.3132, 'reward_std': 1.2193, 'reward_sem': 0.0739} (237.9s)
+[eval length_balanced] wordlimit: {'n_responses': 40, 'samples_per_prompt': 4, 'compliance_rate': 0.575, 'words_mean': 38.775, 'words_std': 19.004, 'prompts_all_compliant': 3, 'tokens_mean': 45.85} (11.7s)
+### exit=0 after 54.6 min

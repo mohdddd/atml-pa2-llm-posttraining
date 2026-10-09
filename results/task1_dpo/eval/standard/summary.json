@@ -1,0 +1,197 @@
+{
+  "heldout": {
+    "n": 272,
+    "preference_accuracy": 0.6580882352941176,
+    "margin_mean": 0.4107740319450386,
+    "margin_median": 0.38893890380859375,
+    "dpo_loss_own_beta": 0.6747501764420382,
+    "dpo_loss_beta_0.10": 0.6747501764420382,
+    "beta": 0.1,
+    "chosen_logratio_mean": -0.3385616219705245,
+    "rejected_logratio_mean": -0.749335653915563,
+    "n_dropped_by_prompt_rule": 28
+  },
+  "meta": {
+    "heldout": {
+      "git_commit": "54ac0acb0b2aea2c62849b97322e43e92f6872ea-dirty",
+      "time_utc": "2026-10-09T00:25:44Z",
+      "python": "3.13.15",
+      "torch": "2.11.0+cu128",
+      "transformers": "4.57.1",
+      "peft": "0.17.1",
+      "cuda_available": true,
+      "gpu": "Tesla T4",
+      "config": {
+        "seed": 6304,
+        "base_model": "Qwen/Qwen2.5-1.5B-Instruct",
+        "reward_model": "yavuz-ai/qwen2.5-1.5b-rm-ultrafeedback",
+        "generation": {
+          "temperature": 0.7,
+          "top_p": 0.9,
+          "do_sample": true
+        },
+        "max_generation_tokens": 256,
+        "max_sequence_length": 768,
+        "max_prompt_tokens": 512,
+        "dtype": "float16"
+      },
+      "adapter": "outputs/task1_dpo/standard",
+      "beta": 0.1,
+      "wall_clock_s": 142.4,
+      "peak_vram_gib": 11.574
+    },
+    "generate": {
+      "git_commit": "54ac0acb0b2aea2c62849b97322e43e92f6872ea-dirty",
+      "time_utc": "2026-10-09T00:29:44Z",
+      "python": "3.13.15",
+      "torch": "2.11.0+cu128",
+      "transformers": "4.57.1",
+      "peft": "0.17.1",
+      "cuda_available": true,
+      "gpu": "Tesla T4",
+      "config": {
+        "seed": 6304,
+        "base_model": "Qwen/Qwen2.5-1.5B-Instruct",
+        "reward_model": "yavuz-ai/qwen2.5-1.5b-rm-ultrafeedback",
+        "generation": {
+          "temperature": 0.7,
+          "top_p": 0.9,
+          "do_sample": true
+        },
+        "max_generation_tokens": 256,
+        "max_sequence_length": 768,
+        "max_prompt_tokens": 512,
+        "dtype": "float16"
+      },
+      "adapter": "outputs/task1_dpo/standard",
+      "beta": 0.1,
+      "wall_clock_s": 239.9,
+      "peak_vram_gib": 7.448
+    },
+    "wordlimit": {
+      "git_commit": "54ac0acb0b2aea2c62849b97322e43e92f6872ea-dirty",
+      "time_utc": "2026-10-09T00:29:55Z",
+      "python": "3.13.15",
+      "torch": "2.11.0+cu128",
+      "transformers": "4.57.1",
+      "peft": "0.17.1",
+      "cuda_available": true,
+      "gpu": "Tesla T4",
+      "config": {
+        "seed": 6304,
+        "base_model": "Qwen/Qwen2.5-1.5B-Instruct",
+        "reward_model": "yavuz-ai/qwen2.5-1.5b-rm-ultrafeedback",
+        "generation": {
+          "temperature": 0.7,
+          "top_p": 0.9,
+          "do_sample": true
+        },
+        "max_generation_tokens": 256,
+        "max_sequence_length": 768,
+        "max_prompt_tokens": 512,
+        "dtype": "float16"
+      },
+      "adapter": "outputs/task1_dpo/standard",
+      "beta": 0.1,
+      "wall_clock_s": 11.0,
+      "peak_vram_gib": 3.991
+    },
+    "stratified": {
+      "git_commit": "54ac0acb0b2aea2c62849b97322e43e92f6872ea-dirty",
+      "time_utc": "2026-10-09T00:31:15Z",
+      "python": "3.13.15",
+      "torch": "2.11.0+cu128",
+      "transformers": "4.57.1",
+      "peft": "0.17.1",
+      "cuda_available": true,
+      "gpu": "Tesla T4",
+      "config": {
+        "seed": 6304,
+        "base_model": "Qwen/Qwen2.5-1.5B-Instruct",
+        "reward_model": "yavuz-ai/qwen2.5-1.5b-rm-ultrafeedback",
+        "generation": {
+          "temperature": 0.7,
+          "top_p": 0.9,
+          "do_sample": true
+        },
+        "max_generation_tokens": 256,
+        "max_sequence_length": 768,
+        "max_prompt_tokens": 512,
+        "dtype": "float16"
+      },
+      "adapter": "outputs/task1_dpo/standard",
+      "beta": 0.1,
+      "wall_clock_s": 79.8,
+      "peak_vram_gib": 10.827
+    }
+  },
+  "generate": {
+    "n": 272,
+    "length_mean": 157.21323529411765,
+    "length_std": 104.24441957425095,
+    "length_median": 201.5,
+    "length_iqr": 208.25,
+    "truncation_rate": 0.47058823529411764,
+    "kl_token_mean": 0.00024503189856954445,
+    "kl_seq_mean": 0.038522257524378156,
+    "reward_mean": 1.2902596627964693,
+    "reward_std": 1.231254307337316,
+    "reward_sem": 0.07465575825218328
+  },
+  "wordlimit": {
+    "n_responses": 40,
+    "samples_per_prompt": 4,
+    "compliance_rate": 0.6,
+    "words_mean": 38.15,
+    "words_std": 18.44124418740469,
+    "prompts_all_compliant": 4,
+    "tokens_mean": 45.45
+  },
+  "stratified": {
+    "all": {
+      "n": 224,
+      "preference_accuracy": 0.5625,
+      "margin_mean": 0.24852665460535459,
+      "margin_median": 0.13679122924804688,
+      "dpo_loss_own_beta": 0.6823988420230297,
+      "dpo_loss_beta_0.10": 0.6823988420230297,
+      "beta": 0.1,
+      "chosen_logratio_mean": -0.5269229859113693,
+      "rejected_logratio_mean": -0.7754496405167239
+    },
+    "n_dropped_by_prompt_rule": 22,
+    "preferred_longer": {
+      "n": 70,
+      "preference_accuracy": 0.4714285714285714,
+      "margin_mean": -0.010097667149135044,
+      "margin_median": -0.06493759155273438,
+      "dpo_loss_own_beta": 0.6952286039048625,
+      "dpo_loss_beta_0.10": 0.6952286039048625,
+      "beta": 0.1,
+      "chosen_logratio_mean": -0.740500477382115,
+      "rejected_logratio_mean": -0.7304028102329799
+    },
+    "length_matched": {
+      "n": 79,
+      "preference_accuracy": 0.5443037974683544,
+      "margin_mean": 0.17100818851326086,
+      "margin_median": 0.07591867446899414,
+      "dpo_loss_own_beta": 0.6857134798485347,
+      "dpo_loss_beta_0.10": 0.6857134798485347,
+      "beta": 0.1,
+      "chosen_logratio_mean": -0.3738228776786901,
+      "rejected_logratio_mean": -0.544831066191951
+    },
+    "rejected_longer": {
+      "n": 75,
+      "preference_accuracy": 0.6666666666666666,
+      "margin_mean": 0.571562139193217,
+      "margin_median": 0.5472412109375,
+      "dpo_loss_own_beta": 0.6669329790904536,
+      "dpo_loss_beta_0.10": 0.6669329790904536,
+      "beta": 0.1,
+      "chosen_logratio_mean": -0.4888494412104289,
+      "rejected_logratio_mean": -1.0604115804036458
+    }
+  }
+}

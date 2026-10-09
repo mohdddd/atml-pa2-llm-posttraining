@@ -1,0 +1,85 @@
+{
+  "heldout": {
+    "n": 272,
+    "preference_accuracy": 0.6139705882352942,
+    "margin_mean": 0.1545648653888801,
+    "margin_median": 0.14678192138671875,
+    "dpo_loss_own_beta": 0.6859864852949507,
+    "dpo_loss_beta_0.10": 0.6859864852949507,
+    "beta": 0.1,
+    "chosen_logratio_mean": -0.1609326115473831,
+    "rejected_logratio_mean": -0.3154974769362632,
+    "n_dropped_by_prompt_rule": 28
+  },
+  "meta": {
+    "heldout": {
+      "git_commit": "54ac0acb0b2aea2c62849b97322e43e92f6872ea-dirty",
+      "time_utc": "2026-10-09T00:35:45Z",
+      "python": "3.13.15",
+      "torch": "2.11.0+cu128",
+      "transformers": "4.57.1",
+      "peft": "0.17.1",
+      "cuda_available": true,
+      "gpu": "Tesla T4",
+      "config": {
+        "seed": 6304,
+        "base_model": "Qwen/Qwen2.5-1.5B-Instruct",
+        "reward_model": "yavuz-ai/qwen2.5-1.5b-rm-ultrafeedback",
+        "generation": {
+          "temperature": 0.7,
+          "top_p": 0.9,
+          "do_sample": true
+        },
+        "max_generation_tokens": 256,
+        "max_sequence_length": 768,
+        "max_prompt_tokens": 512,
+        "dtype": "float16"
+      },
+      "adapter": "outputs/task1_dpo/beta_0.10",
+      "beta": 0.1,
+      "wall_clock_s": 177.7,
+      "peak_vram_gib": 11.574
+    },
+    "generate": {
+      "git_commit": "54ac0acb0b2aea2c62849b97322e43e92f6872ea-dirty",
+      "time_utc": "2026-10-09T00:40:16Z",
+      "python": "3.13.15",
+      "torch": "2.11.0+cu128",
+      "transformers": "4.57.1",
+      "peft": "0.17.1",
+      "cuda_available": true,
+      "gpu": "Tesla T4",
+      "config": {
+        "seed": 6304,
+        "base_model": "Qwen/Qwen2.5-1.5B-Instruct",
+        "reward_model": "yavuz-ai/qwen2.5-1.5b-rm-ultrafeedback",
+        "generation": {
+          "temperature": 0.7,
+          "top_p": 0.9,
+          "do_sample": true
+        },
+        "max_generation_tokens": 256,
+        "max_sequence_length": 768,
+        "max_prompt_tokens": 512,
+        "dtype": "float16"
+      },
+      "adapter": "outputs/task1_dpo/beta_0.10",
+      "beta": 0.1,
+      "wall_clock_s": 270.7,
+      "peak_vram_gib": 7.448
+    }
+  },
+  "generate": {
+    "n": 272,
+    "length_mean": 156.75735294117646,
+    "length_std": 104.97875352242569,
+    "length_median": 202.0,
+    "length_iqr": 212.0,
+    "truncation_rate": 0.47058823529411764,
+    "kl_token_mean": -0.00017076281435667807,
+    "kl_seq_mean": -0.02676832675933838,
+    "reward_mean": 1.2937810000251322,
+    "reward_std": 1.2031316829399352,
+    "reward_sem": 0.07295057368071309
+  }
+}

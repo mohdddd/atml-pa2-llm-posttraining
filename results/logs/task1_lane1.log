@@ -1,0 +1,56 @@
+### 2026-10-09 00:00:35 GPU=1 CMD: bash task1_dpo/run_all.sh lane1
+objective          matches_manual_beta_0.03                      True
+objective          starter_minus_manual_beta_0.03                0.14210155864759555
+objective          matches_manual_beta_0.1                       True
+objective          starter_minus_manual_beta_0.1                 0.508957485459077
+objective          matches_manual_beta_0.3                       True
+objective          starter_minus_manual_beta_0.3                 1.5569563219725762
+objective          loss_at_pi_eq_ref                             0.6931471805599453
+objective          starter_loss_at_pi_eq_ref                     6.658967199737515
+objective          log2                                          0.6931471805599453
+objective          pi_eq_ref_gives_log2                          True
+objective          grad_raises_chosen                            True
+objective          grad_lowers_rejected                          True
+logprob_plumbing   padded_vs_unpadded_max_abs_diff               3.0517578125e-05
+logprob_plumbing   lean_vs_starter_token_logp_max_abs_diff       4.00543212890625e-05
+logprob_plumbing   entropy_finite_nonneg                         True
+ALL CHECKS PASSED
+betas: [0.03, 0.1, 0.3] | examples per fork: 600
+$ -m task1_dpo.train --config configs/dpo.yaml --run-name beta_0.03 --output outputs/task1_dpo/beta_0.03 --beta 0.03 --max-examples 600
+[beta_0.03] beta=0.03 pairs=600 (dropped 106) microbatches/epoch=300 optimizer_steps=38 fp16_scaler=True
+[beta_0.03] step 1/38 loss=0.6931 acc=0.000 margin=0.000 gnorm=0.677 t=14.5s vram=8.379GiB
+[beta_0.03] step 10/38 loss=0.6933 acc=0.500 margin=-0.010 gnorm=0.623 t=163.5s vram=8.388GiB
+[beta_0.03] step 20/38 loss=0.6914 acc=0.500 margin=0.120 gnorm=0.630 t=340.4s vram=8.389GiB
+[beta_0.03] step 30/38 loss=0.6928 acc=0.500 margin=0.028 gnorm=0.661 t=519.9s vram=8.389GiB
+[beta_0.03] step 38/38 loss=0.6899 acc=0.625 margin=0.221 gnorm=0.679 t=647.5s vram=8.389GiB
+[beta_0.03] done in 10.8 min, peak VRAM 8.389 GiB -> /kaggle/working/atml-pa2-llm-posttraining/outputs/task1_dpo/beta_0.03
+$ -m task1_dpo.evaluate --config configs/dpo.yaml --adapter outputs/task1_dpo/beta_0.03 --name beta_0.03 --beta 0.03 --parts heldout,generate
+[eval beta_0.03] heldout: {'n': 272, 'preference_accuracy': 0.6287, 'margin_mean': 0.1661, 'margin_median': 0.1562, 'dpo_loss_own_beta': 0.6907, 'dpo_loss_beta_0.10': 0.6856, 'beta': 0.03, 'chosen_logratio_mean': -0.189, 'rejected_logratio_mean': -0.3551, 'n_dropped_by_prompt_rule': 28} (178.5s)
+[eval beta_0.03] generate: {'n': 272, 'length_mean': 157.2132, 'length_std': 104.7977, 'length_median': 201.5, 'length_iqr': 212.0, 'truncation_rate': 0.4743, 'kl_token_mean': -0.0002, 'kl_seq_mean': -0.0277, 'reward_mean': 1.2615, 'reward_std': 1.2026, 'reward_sem': 0.0729} (291.1s)
+$ -m task1_dpo.train --config configs/dpo.yaml --run-name beta_0.10 --output outputs/task1_dpo/beta_0.10 --beta 0.1 --max-examples 600
+[beta_0.10] beta=0.1 pairs=600 (dropped 106) microbatches/epoch=300 optimizer_steps=38 fp16_scaler=True
+[beta_0.10] step 1/38 loss=0.6931 acc=0.000 margin=0.000 gnorm=2.256 t=17.7s vram=8.379GiB
+[beta_0.10] step 10/38 loss=0.6930 acc=0.438 margin=0.003 gnorm=2.070 t=177.4s vram=8.388GiB
+[beta_0.10] step 20/38 loss=0.6869 acc=0.625 margin=0.129 gnorm=2.090 t=355.7s vram=8.389GiB
+[beta_0.10] step 30/38 loss=0.6922 acc=0.500 margin=0.030 gnorm=2.189 t=536.4s vram=8.389GiB
+[beta_0.10] step 38/38 loss=0.6839 acc=0.625 margin=0.190 gnorm=2.223 t=664.7s vram=8.389GiB
+[beta_0.10] done in 11.1 min, peak VRAM 8.389 GiB -> /kaggle/working/atml-pa2-llm-posttraining/outputs/task1_dpo/beta_0.10
+$ -m task1_dpo.evaluate --config configs/dpo.yaml --adapter outputs/task1_dpo/beta_0.10 --name beta_0.10 --beta 0.1 --parts heldout,generate
+[eval beta_0.10] heldout: {'n': 272, 'preference_accuracy': 0.614, 'margin_mean': 0.1546, 'margin_median': 0.1468, 'dpo_loss_own_beta': 0.686, 'dpo_loss_beta_0.10': 0.686, 'beta': 0.1, 'chosen_logratio_mean': -0.1609, 'rejected_logratio_mean': -0.3155, 'n_dropped_by_prompt_rule': 28} (177.7s)
+[eval beta_0.10] generate: {'n': 272, 'length_mean': 156.7574, 'length_std': 104.9788, 'length_median': 202.0, 'length_iqr': 212.0, 'truncation_rate': 0.4706, 'kl_token_mean': -0.0002, 'kl_seq_mean': -0.0268, 'reward_mean': 1.2938, 'reward_std': 1.2031, 'reward_sem': 0.073} (270.7s)
+$ -m task1_dpo.train --config configs/dpo.yaml --run-name beta_0.30 --output outputs/task1_dpo/beta_0.30 --beta 0.3 --max-examples 600
+[beta_0.30] beta=0.3 pairs=600 (dropped 106) microbatches/epoch=300 optimizer_steps=38 fp16_scaler=True
+[beta_0.30] step 1/38 loss=0.6931 acc=0.000 margin=0.000 gnorm=nan t=17.6s vram=8.379GiB
+[beta_0.30] step 10/38 loss=0.6932 acc=0.438 margin=0.001 gnorm=6.178 t=177.2s vram=8.388GiB
+[beta_0.30] step 20/38 loss=0.6785 acc=0.625 margin=0.105 gnorm=6.172 t=354.6s vram=8.389GiB
+[beta_0.30] step 30/38 loss=0.6923 acc=0.438 margin=0.022 gnorm=6.501 t=534.1s vram=8.389GiB
+[beta_0.30] step 38/38 loss=0.6713 acc=0.625 margin=0.152 gnorm=6.462 t=661.6s vram=8.389GiB
+[beta_0.30] done in 11.0 min, peak VRAM 8.389 GiB -> /kaggle/working/atml-pa2-llm-posttraining/outputs/task1_dpo/beta_0.30
+$ -m task1_dpo.evaluate --config configs/dpo.yaml --adapter outputs/task1_dpo/beta_0.30 --name beta_0.30 --beta 0.3 --parts heldout,generate
+[eval beta_0.30] heldout: {'n': 272, 'preference_accuracy': 0.6103, 'margin_mean': 0.1249, 'margin_median': 0.108, 'dpo_loss_own_beta': 0.6776, 'dpo_loss_beta_0.10': 0.6873, 'beta': 0.3, 'chosen_logratio_mean': -0.1013, 'rejected_logratio_mean': -0.2263, 'n_dropped_by_prompt_rule': 28} (177.8s)
+[eval beta_0.30] generate: {'n': 272, 'length_mean': 156.4449, 'length_std': 105.0891, 'length_median': 202.0, 'length_iqr': 215.25, 'truncation_rate': 0.4743, 'kl_token_mean': -0.0002, 'kl_seq_mean': -0.0365, 'reward_mean': 1.2903, 'reward_std': 1.1877, 'reward_sem': 0.072} (270.2s)
+[eval sft] heldout: {'n': 272, 'preference_accuracy': 0.0, 'margin_mean': 0.0, 'margin_median': 0.0, 'dpo_loss_own_beta': 0.6931, 'dpo_loss_beta_0.10': 0.6931, 'beta': 0.1, 'chosen_logratio_mean': 0.0, 'rejected_logratio_mean': 0.0, 'n_dropped_by_prompt_rule': 28} (87.3s)
+[eval sft] generate: {'n': 272, 'length_mean': 156.6213, 'length_std': 104.726, 'length_median': 201.5, 'length_iqr': 211.25, 'truncation_rate': 0.4669, 'kl_token_mean': 0.0, 'kl_seq_mean': 0.0, 'reward_mean': 1.2599, 'reward_std': 1.1941, 'reward_sem': 0.0724} (216.6s)
+[eval sft] wordlimit: {'n_responses': 40, 'samples_per_prompt': 4, 'compliance_rate': 0.55, 'words_mean': 39.8, 'words_std': 18.7865, 'prompts_all_compliant': 3, 'tokens_mean': 47.025} (9.5s)
+[eval sft] stratified: {'n_dropped_by_prompt_rule': 22} (48.8s)
+### exit=0 after 65.2 min

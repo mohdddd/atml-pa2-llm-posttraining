@@ -1,0 +1,4 @@
+model,n_responses,compliance_rate,words_mean,words_std,tokens_mean,prompts_all_compliant_of_10
+sft,40,0.55,39.8,18.786519989964436,47.025,3
+standard,40,0.6,38.15,18.44124418740469,45.45,4
+length_balanced,40,0.575,38.775,19.00403128623517,45.85,3

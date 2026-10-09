@@ -1,0 +1,197 @@
+{
+  "heldout": {
+    "n": 272,
+    "preference_accuracy": 0.0,
+    "margin_mean": 0.0,
+    "margin_median": 0.0,
+    "dpo_loss_own_beta": 0.6931471805599453,
+    "dpo_loss_beta_0.10": 0.6931471805599453,
+    "beta": 0.1,
+    "chosen_logratio_mean": 0.0,
+    "rejected_logratio_mean": 0.0,
+    "n_dropped_by_prompt_rule": 28
+  },
+  "meta": {
+    "heldout": {
+      "git_commit": "54ac0acb0b2aea2c62849b97322e43e92f6872ea-dirty",
+      "time_utc": "2026-10-09T01:01:12Z",
+      "python": "3.13.15",
+      "torch": "2.11.0+cu128",
+      "transformers": "4.57.1",
+      "peft": "0.17.1",
+      "cuda_available": true,
+      "gpu": "Tesla T4",
+      "config": {
+        "seed": 6304,
+        "base_model": "Qwen/Qwen2.5-1.5B-Instruct",
+        "reward_model": "yavuz-ai/qwen2.5-1.5b-rm-ultrafeedback",
+        "generation": {
+          "temperature": 0.7,
+          "top_p": 0.9,
+          "do_sample": true
+        },
+        "max_generation_tokens": 256,
+        "max_sequence_length": 768,
+        "max_prompt_tokens": 512,
+        "dtype": "float16"
+      },
+      "adapter": null,
+      "beta": 0.1,
+      "wall_clock_s": 87.3,
+      "peak_vram_gib": 11.57
+    },
+    "generate": {
+      "git_commit": "54ac0acb0b2aea2c62849b97322e43e92f6872ea-dirty",
+      "time_utc": "2026-10-09T01:04:48Z",
+      "python": "3.13.15",
+      "torch": "2.11.0+cu128",
+      "transformers": "4.57.1",
+      "peft": "0.17.1",
+      "cuda_available": true,
+      "gpu": "Tesla T4",
+      "config": {
+        "seed": 6304,
+        "base_model": "Qwen/Qwen2.5-1.5B-Instruct",
+        "reward_model": "yavuz-ai/qwen2.5-1.5b-rm-ultrafeedback",
+        "generation": {
+          "temperature": 0.7,
+          "top_p": 0.9,
+          "do_sample": true
+        },
+        "max_generation_tokens": 256,
+        "max_sequence_length": 768,
+        "max_prompt_tokens": 512,
+        "dtype": "float16"
+      },
+      "adapter": null,
+      "beta": 0.1,
+      "wall_clock_s": 216.6,
+      "peak_vram_gib": 7.444
+    },
+    "wordlimit": {
+      "git_commit": "54ac0acb0b2aea2c62849b97322e43e92f6872ea-dirty",
+      "time_utc": "2026-10-09T01:04:58Z",
+      "python": "3.13.15",
+      "torch": "2.11.0+cu128",
+      "transformers": "4.57.1",
+      "peft": "0.17.1",
+      "cuda_available": true,
+      "gpu": "Tesla T4",
+      "config": {
+        "seed": 6304,
+        "base_model": "Qwen/Qwen2.5-1.5B-Instruct",
+        "reward_model": "yavuz-ai/qwen2.5-1.5b-rm-ultrafeedback",
+        "generation": {
+          "temperature": 0.7,
+          "top_p": 0.9,
+          "do_sample": true
+        },
+        "max_generation_tokens": 256,
+        "max_sequence_length": 768,
+        "max_prompt_tokens": 512,
+        "dtype": "float16"
+      },
+      "adapter": null,
+      "beta": 0.1,
+      "wall_clock_s": 9.5,
+      "peak_vram_gib": 4.167
+    },
+    "stratified": {
+      "git_commit": "54ac0acb0b2aea2c62849b97322e43e92f6872ea-dirty",
+      "time_utc": "2026-10-09T01:05:46Z",
+      "python": "3.13.15",
+      "torch": "2.11.0+cu128",
+      "transformers": "4.57.1",
+      "peft": "0.17.1",
+      "cuda_available": true,
+      "gpu": "Tesla T4",
+      "config": {
+        "seed": 6304,
+        "base_model": "Qwen/Qwen2.5-1.5B-Instruct",
+        "reward_model": "yavuz-ai/qwen2.5-1.5b-rm-ultrafeedback",
+        "generation": {
+          "temperature": 0.7,
+          "top_p": 0.9,
+          "do_sample": true
+        },
+        "max_generation_tokens": 256,
+        "max_sequence_length": 768,
+        "max_prompt_tokens": 512,
+        "dtype": "float16"
+      },
+      "adapter": null,
+      "beta": 0.1,
+      "wall_clock_s": 48.8,
+      "peak_vram_gib": 10.823
+    }
+  },
+  "generate": {
+    "n": 272,
+    "length_mean": 156.62132352941177,
+    "length_std": 104.72596460147999,
+    "length_median": 201.5,
+    "length_iqr": 211.25,
+    "truncation_rate": 0.46691176470588236,
+    "kl_token_mean": 0.0,
+    "kl_seq_mean": 0.0,
+    "reward_mean": 1.2599294606377096,
+    "reward_std": 1.1940634988963013,
+    "reward_sem": 0.07240073425947127
+  },
+  "wordlimit": {
+    "n_responses": 40,
+    "samples_per_prompt": 4,
+    "compliance_rate": 0.55,
+    "words_mean": 39.8,
+    "words_std": 18.786519989964436,
+    "prompts_all_compliant": 3,
+    "tokens_mean": 47.025
+  },
+  "stratified": {
+    "all": {
+      "n": 224,
+      "preference_accuracy": 0.0,
+      "margin_mean": 0.0,
+      "margin_median": 0.0,
+      "dpo_loss_own_beta": 0.6931471805599453,
+      "dpo_loss_beta_0.10": 0.6931471805599453,
+      "beta": 0.1,
+      "chosen_logratio_mean": 0.0,
+      "rejected_logratio_mean": 0.0
+    },
+    "n_dropped_by_prompt_rule": 22,
+    "preferred_longer": {
+      "n": 70,
+      "preference_accuracy": 0.0,
+      "margin_mean": 0.0,
+      "margin_median": 0.0,
+      "dpo_loss_own_beta": 0.6931471805599454,
+      "dpo_loss_beta_0.10": 0.6931471805599454,
+      "beta": 0.1,
+      "chosen_logratio_mean": 0.0,
+      "rejected_logratio_mean": 0.0
+    },
+    "length_matched": {
+      "n": 79,
+      "preference_accuracy": 0.0,
+      "margin_mean": 0.0,
+      "margin_median": 0.0,
+      "dpo_loss_own_beta": 0.6931471805599455,
+      "dpo_loss_beta_0.10": 0.6931471805599455,
+      "beta": 0.1,
+      "chosen_logratio_mean": 0.0,
+      "rejected_logratio_mean": 0.0
+    },
+    "rejected_longer": {
+      "n": 75,
+      "preference_accuracy": 0.0,
+      "margin_mean": 0.0,
+      "margin_median": 0.0,
+      "dpo_loss_own_beta": 0.6931471805599454,
+      "dpo_loss_beta_0.10": 0.6931471805599454,
+      "beta": 0.1,
+      "chosen_logratio_mean": 0.0,
+      "rejected_logratio_mean": 0.0
+    }
+  }
+}
