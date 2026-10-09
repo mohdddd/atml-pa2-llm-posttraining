@@ -49,7 +49,8 @@ def main():
             "model": m, "label": LABELS[m],
             "train_file": (tr or {}).get("dataset", "-"), "beta": (tr or {}).get("beta", None),
             "train_pairs": (tr or {}).get("n_pairs", 0), "optimizer_steps": (tr or {}).get("optimizer_steps", 0),
-            "heldout_n": h.get("n"), "pref_accuracy": h.get("preference_accuracy"), "margin_mean": h.get("margin_mean"),
+            # SFT is its own reference: m_theta == 0 for every pair, so accuracy (m > 0) is a tie, not 0.
+            "heldout_n": h.get("n"), "pref_accuracy": None if m == "sft" else h.get("preference_accuracy"), "margin_mean": h.get("margin_mean"),
             "dpo_loss_own_beta": h.get("dpo_loss_own_beta"), "dpo_loss_beta_0.10": h.get("dpo_loss_beta_0.10"),
             "gen_n": g.get("n"), "kl_token_mean": g.get("kl_token_mean"), "kl_seq_mean": g.get("kl_seq_mean"),
             "reward_mean": g.get("reward_mean"), "reward_sem": g.get("reward_sem"),
@@ -60,7 +61,7 @@ def main():
         })
         for st in ("preferred_longer", "length_matched", "rejected_longer", "all"):
             if st in s:
-                strata_rows.append({"model": m, "stratum": st, "n": s[st].get("n"), "pref_accuracy": s[st].get("preference_accuracy"),
+                strata_rows.append({"model": m, "stratum": st, "n": s[st].get("n"), "pref_accuracy": None if m == "sft" else s[st].get("preference_accuracy"),
                                     "margin_mean": s[st].get("margin_mean"), "dpo_loss_beta_0.10": s[st].get("dpo_loss_beta_0.10")})
         if w:
             wl_rows.append({"model": m, "n_responses": w["n_responses"], "compliance_rate": w["compliance_rate"],

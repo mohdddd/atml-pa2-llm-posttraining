@@ -20,6 +20,7 @@ case "${1:-}" in
     ;;
   summary)
     python -m task1_dpo.summarize      --config $CFG
+    python -m task1_dpo.diagnostics
     ;;
   *)
     echo "usage: $0 lane0|lane1|summary" >&2; exit 2 ;;
