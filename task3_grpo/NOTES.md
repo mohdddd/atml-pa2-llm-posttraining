@@ -28,3 +28,6 @@ sampling temperature 0.7, top-p 0.9; seed 6304.
 - Group size:
 - Normalisation:
 - Dominant instability without a critic:
+
+## Known limitation found after the run
+Same held-out sampling-seed limitation as described in `task2_ppo/NOTES.md` (seed reset once, not per batch).
