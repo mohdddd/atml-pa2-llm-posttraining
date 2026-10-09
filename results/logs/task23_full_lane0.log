@@ -1,0 +1,142 @@
+### 2026-10-09 11:32:07 GPU=0 CMD: bash task2_ppo/run_all.sh lane0
+{'eps_0.05_matches_manual': True, 'eps_0.05_starter_minus_manual': -0.09151048012722421, 'eps_0.05_clip_fraction_definition_ok': True, 'eps_0.2_matches_manual': True, 'eps_0.2_starter_minus_manual': -0.029075824548858632, 'eps_0.2_clip_fraction_definition_ok': True, 'eps_0.5_matches_manual': True, 'eps_0.5_starter_minus_manual': 0.0, 'eps_0.5_clip_fraction_definition_ok': True, 'gradient_cases_all_match': True, 'starter_grad_nonzero_where_clip_binds': True, 'rho1_loss_equals_minus_mean_adv': True, 'rho1_clip_fraction_zero': True, 'gae_gamma1.0_lam0.95_max_abs_diff': 1.7763568394002505e-15, 'gae_gamma1.0_lam0.95_returns_ok': True, 'gae_gamma0.99_lam0.9_max_abs_diff': 8.881784197001252e-16, 'gae_gamma0.99_lam0.9_returns_ok': True, 'shaped_rewards_max_abs_diff': 0.0, 'all_checks_pass': True}
+[standard] updates=20 prompts/update=1 ppo_epochs=2 eps=0.2 kl_beta=0.1 max_response=512 fp16_scaler=True dropout_off=104
+/kaggle/working/atml-pa2-llm-posttraining/task2_ppo/continue_train.py:193: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  "policy_loss": float(loss), "value_loss": float(v_loss),
+[standard] update 1/20 R=2.697 KL=0.00054 H=1.093 len=101 Lpi=-0.0003 Lv=7.688 EV=-4.07 clip=0.000 gn=0.749 t=8.2s vram=6.067GiB
+[standard] update 2/20 R=3.285 KL=0.00093 H=1.646 len=21 Lpi=-0.0011 Lv=24.968 EV=-9.89 clip=0.000 gn=1.484 t=2.2s vram=6.067GiB
+[standard] update 3/20 R=-1.328 KL=0.00228 H=0.570 len=19 Lpi=-0.0001 Lv=3.344 EV=-270.09 clip=0.000 gn=0.647 t=2.2s vram=6.067GiB
+[standard] update 4/20 R=2.168 KL=0.00004 H=1.450 len=250 Lpi=0.0000 Lv=3.678 EV=-3.05 clip=0.000 gn=0.299 t=13.5s vram=6.252GiB
+[standard] update 5/20 R=0.460 KL=0.00019 H=1.259 len=512 Lpi=0.0001 Lv=4.727 EV=-12.01 clip=0.000 gn=0.278 t=26.9s vram=7.024GiB
+[standard] update 6/20 R=2.514 KL=0.00016 H=0.914 len=512 Lpi=-0.0001 Lv=5.841 EV=-7.74 clip=0.000 gn=0.217 t=27.0s vram=7.024GiB
+[standard] update 7/20 R=2.721 KL=-0.00016 H=1.421 len=446 Lpi=-0.0002 Lv=4.202 EV=-3.55 clip=0.000 gn=0.237 t=23.0s vram=7.024GiB
+[standard] update 8/20 R=1.544 KL=0.00011 H=0.607 len=11 Lpi=0.0019 Lv=10.373 EV=-17.46 clip=0.000 gn=5.186 t=1.8s vram=7.024GiB
+[standard] update 9/20 R=2.205 KL=-0.00002 H=1.081 len=284 Lpi=0.0001 Lv=2.640 EV=-3.37 clip=0.000 gn=0.325 t=14.9s vram=7.024GiB
+[standard] update 10/20 R=2.191 KL=-0.00014 H=0.994 len=292 Lpi=-0.0002 Lv=3.775 EV=-2.69 clip=0.000 gn=0.288 t=15.7s vram=7.024GiB
+[standard] update 11/20 R=1.483 KL=-0.00003 H=0.904 len=205 Lpi=0.0001 Lv=2.659 EV=-8.60 clip=0.000 gn=0.305 t=11.7s vram=7.024GiB
+[standard] update 12/20 R=1.996 KL=-0.00013 H=0.589 len=512 Lpi=-0.0000 Lv=4.274 EV=-8.14 clip=0.000 gn=0.169 t=26.3s vram=7.024GiB
+[standard] update 13/20 R=1.987 KL=-0.00040 H=1.274 len=364 Lpi=0.0000 Lv=2.366 EV=-20.09 clip=0.000 gn=0.271 t=19.4s vram=7.024GiB
+[standard] update 14/20 R=2.615 KL=-0.00127 H=1.032 len=58 Lpi=0.0005 Lv=2.460 EV=-34.12 clip=0.000 gn=0.799 t=4.2s vram=7.024GiB
+[standard] update 15/20 R=0.573 KL=0.00018 H=0.985 len=512 Lpi=0.0000 Lv=5.022 EV=-8.84 clip=0.000 gn=0.215 t=27.5s vram=7.025GiB
+[standard] update 16/20 R=3.059 KL=-0.00000 H=0.369 len=354 Lpi=-0.0000 Lv=3.725 EV=-3.77 clip=0.000 gn=0.204 t=19.0s vram=7.025GiB
+[standard] update 17/20 R=1.262 KL=-0.00019 H=1.256 len=463 Lpi=-0.0002 Lv=3.413 EV=-2.91 clip=0.000 gn=0.209 t=24.8s vram=7.025GiB
+[standard] update 18/20 R=-0.345 KL=0.00013 H=0.588 len=23 Lpi=0.0001 Lv=5.712 EV=-2.03 clip=0.000 gn=0.723 t=2.4s vram=7.025GiB
+[standard] update 19/20 R=-1.012 KL=0.00034 H=1.693 len=70 Lpi=0.0001 Lv=5.625 EV=-13.38 clip=0.000 gn=0.760 t=4.7s vram=7.025GiB
+[standard] update 20/20 R=2.035 KL=-0.00028 H=0.847 len=103 Lpi=-0.0001 Lv=2.830 EV=-4.03 clip=0.000 gn=0.383 t=6.2s vram=7.025GiB
+[standard] done in 4.7 min, peak VRAM 7.025 GiB -> /kaggle/working/atml-pa2-llm-posttraining/outputs/task2_ppo/standard
+[eval midpoint] adapter=checkpoints/ppo_midpoint_policy prompts=165 max_new_tokens=768
+  eval batch 1/6 done
+  eval batch 2/6 done
+  eval batch 3/6 done
+  eval batch 4/6 done
+  eval batch 5/6 done
+  eval batch 6/6 done
+[eval midpoint] reward=1.727±0.100 KL=-0.00002 H=0.954 len=298.9±252.9 trunc=0.085
+[eval standard] adapter=outputs/task2_ppo/standard prompts=165 max_new_tokens=768
+  eval batch 1/6 done
+  eval batch 2/6 done
+  eval batch 3/6 done
+  eval batch 4/6 done
+  eval batch 5/6 done
+  eval batch 6/6 done
+[eval standard] reward=1.726±0.099 KL=0.00001 H=0.952 len=300.2±253.3 trunc=0.085
+[clip cached] rollouts=32 prompts_cut=3 step0 |log ratio| mean=0.0258 clip fractions={'0.05': 0.1077, '0.20': 0.0085, '0.50': 0.0056}
+/kaggle/working/atml-pa2-llm-posttraining/task2_ppo/analyze_clipping.py:201: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  loss_total += float(loss_i)
+[clip cached] eps=0.05 step 1 loss=0.0428 clip=0.1409 affected=0.0713 gn=0.118
+[clip cached] eps=0.05 step 2 loss=0.0207 clip=0.1105 affected=0.0549 gn=0.096
+[clip cached] eps=0.05 step 3 loss=0.0091 clip=0.1068 affected=0.0521 gn=0.077
+[clip cached] eps=0.05 step 4 loss=-0.0326 clip=0.0822 affected=0.0383 gn=0.088
+[clip cached] eps=0.05 step 5 loss=0.0244 clip=0.0973 affected=0.0472 gn=0.078
+[clip cached] eps=0.05 step 6 loss=-0.1118 clip=0.1232 affected=0.0702 gn=0.132
+[clip cached] eps=0.05 step 7 loss=0.0161 clip=0.1207 affected=0.0605 gn=0.065
+[clip cached] eps=0.05 step 8 loss=0.0109 clip=0.1085 affected=0.0503 gn=0.107
+[clip cached] eps=0.2 step 1 loss=0.0398 clip=0.0375 affected=0.0209 gn=0.130
+[clip cached] eps=0.2 step 2 loss=0.0196 clip=0.0000 affected=0.0000 gn=0.105
+[clip cached] eps=0.2 step 3 loss=0.0081 clip=0.0004 affected=0.0000 gn=0.084
+[clip cached] eps=0.2 step 4 loss=-0.0335 clip=0.0011 affected=0.0004 gn=0.092
+[clip cached] eps=0.2 step 5 loss=0.0233 clip=0.0000 affected=0.0000 gn=0.085
+[clip cached] eps=0.2 step 6 loss=-0.1128 clip=0.0012 affected=0.0012 gn=0.151
+[clip cached] eps=0.2 step 7 loss=0.0142 clip=0.0244 affected=0.0137 gn=0.073
+[clip cached] eps=0.2 step 8 loss=0.0097 clip=0.0037 affected=0.0011 gn=0.116
+[clip cached] eps=0.5 step 1 loss=0.0370 clip=0.0263 affected=0.0155 gn=0.132
+[clip cached] eps=0.5 step 2 loss=0.0197 clip=0.0000 affected=0.0000 gn=0.105
+[clip cached] eps=0.5 step 3 loss=0.0081 clip=0.0000 affected=0.0000 gn=0.085
+[clip cached] eps=0.5 step 4 loss=-0.0338 clip=0.0000 affected=0.0000 gn=0.098
+[clip cached] eps=0.5 step 5 loss=0.0232 clip=0.0000 affected=0.0000 gn=0.085
+[clip cached] eps=0.5 step 6 loss=-0.1130 clip=0.0000 affected=0.0000 gn=0.153
+[clip cached] eps=0.5 step 7 loss=0.0122 clip=0.0187 affected=0.0110 gn=0.073
+[clip cached] eps=0.5 step 8 loss=0.0094 clip=0.0000 affected=0.0000 gn=0.122
+[clip cached] wrote /kaggle/working/atml-pa2-llm-posttraining/results/task2_ppo/clipping/cached_study.json
+$ -m task2_ppo.continue_train --config configs/ppo.yaml --run-name fork_eps0.05_kl0.10 --updates 8 --clip-epsilon 0.05 --kl-beta 0.1 --output outputs/task2_ppo/forks/eps0.05_kl0.10
+[fork_eps0.05_kl0.10] updates=8 prompts/update=1 ppo_epochs=2 eps=0.05 kl_beta=0.1 max_response=512 fp16_scaler=True dropout_off=104
+/kaggle/working/atml-pa2-llm-posttraining/task2_ppo/continue_train.py:193: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  "policy_loss": float(loss), "value_loss": float(v_loss),
+[fork_eps0.05_kl0.10] update 1/8 R=2.697 KL=0.00054 H=1.093 len=101 Lpi=-0.0003 Lv=7.688 EV=-4.07 clip=0.000 gn=0.749 t=6.9s vram=6.067GiB
+[fork_eps0.05_kl0.10] update 2/8 R=3.285 KL=0.00093 H=1.646 len=21 Lpi=-0.0011 Lv=24.968 EV=-9.89 clip=0.000 gn=1.484 t=2.3s vram=6.067GiB
+[fork_eps0.05_kl0.10] update 3/8 R=-1.328 KL=0.00228 H=0.570 len=19 Lpi=-0.0001 Lv=3.344 EV=-270.09 clip=0.000 gn=0.647 t=2.2s vram=6.067GiB
+[fork_eps0.05_kl0.10] update 4/8 R=2.168 KL=0.00004 H=1.450 len=250 Lpi=0.0000 Lv=3.678 EV=-3.05 clip=0.000 gn=0.299 t=13.3s vram=6.252GiB
+[fork_eps0.05_kl0.10] update 5/8 R=0.460 KL=0.00019 H=1.259 len=512 Lpi=0.0001 Lv=4.727 EV=-12.01 clip=0.000 gn=0.278 t=27.7s vram=7.024GiB
+[fork_eps0.05_kl0.10] update 6/8 R=2.514 KL=0.00016 H=0.914 len=512 Lpi=-0.0001 Lv=5.841 EV=-7.74 clip=0.000 gn=0.217 t=27.7s vram=7.024GiB
+[fork_eps0.05_kl0.10] update 7/8 R=2.721 KL=-0.00016 H=1.421 len=446 Lpi=-0.0002 Lv=4.202 EV=-3.55 clip=0.000 gn=0.237 t=24.1s vram=7.024GiB
+[fork_eps0.05_kl0.10] update 8/8 R=1.544 KL=0.00011 H=0.607 len=11 Lpi=0.0019 Lv=10.373 EV=-17.46 clip=0.000 gn=5.186 t=1.9s vram=7.024GiB
+[fork_eps0.05_kl0.10] done in 1.8 min, peak VRAM 7.024 GiB -> /kaggle/working/atml-pa2-llm-posttraining/outputs/task2_ppo/forks/eps0.05_kl0.10
+$ -m task2_ppo.evaluate --config configs/ppo.yaml --adapter outputs/task2_ppo/forks/eps0.05_kl0.10 --name fork_eps0.05_kl0.10
+[eval fork_eps0.05_kl0.10] adapter=outputs/task2_ppo/forks/eps0.05_kl0.10 prompts=165 max_new_tokens=768
+  eval batch 1/6 done
+  eval batch 2/6 done
+  eval batch 3/6 done
+  eval batch 4/6 done
+  eval batch 5/6 done
+  eval batch 6/6 done
+[eval fork_eps0.05_kl0.10] reward=1.828±0.094 KL=0.00002 H=0.939 len=305.7±255.3 trunc=0.067
+$ -m task2_ppo.continue_train --config configs/ppo.yaml --run-name fork_eps0.20_kl0.10 --updates 8 --clip-epsilon 0.2 --kl-beta 0.1 --output outputs/task2_ppo/forks/eps0.20_kl0.10
+[fork_eps0.20_kl0.10] updates=8 prompts/update=1 ppo_epochs=2 eps=0.2 kl_beta=0.1 max_response=512 fp16_scaler=True dropout_off=104
+/kaggle/working/atml-pa2-llm-posttraining/task2_ppo/continue_train.py:193: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  "policy_loss": float(loss), "value_loss": float(v_loss),
+[fork_eps0.20_kl0.10] update 1/8 R=2.697 KL=0.00054 H=1.093 len=101 Lpi=-0.0003 Lv=7.688 EV=-4.07 clip=0.000 gn=0.749 t=6.6s vram=6.067GiB
+[fork_eps0.20_kl0.10] update 2/8 R=3.285 KL=0.00093 H=1.646 len=21 Lpi=-0.0011 Lv=24.968 EV=-9.89 clip=0.000 gn=1.484 t=2.4s vram=6.067GiB
+[fork_eps0.20_kl0.10] update 3/8 R=-1.328 KL=0.00228 H=0.570 len=19 Lpi=-0.0001 Lv=3.344 EV=-270.09 clip=0.000 gn=0.647 t=2.3s vram=6.067GiB
+[fork_eps0.20_kl0.10] update 4/8 R=2.168 KL=0.00004 H=1.450 len=250 Lpi=0.0000 Lv=3.678 EV=-3.05 clip=0.000 gn=0.299 t=14.1s vram=6.252GiB
+[fork_eps0.20_kl0.10] update 5/8 R=0.460 KL=0.00019 H=1.259 len=512 Lpi=0.0001 Lv=4.727 EV=-12.01 clip=0.000 gn=0.278 t=28.1s vram=7.024GiB
+[fork_eps0.20_kl0.10] update 6/8 R=2.514 KL=0.00016 H=0.914 len=512 Lpi=-0.0001 Lv=5.841 EV=-7.74 clip=0.000 gn=0.217 t=28.0s vram=7.024GiB
+[fork_eps0.20_kl0.10] update 7/8 R=2.721 KL=-0.00016 H=1.421 len=446 Lpi=-0.0002 Lv=4.202 EV=-3.55 clip=0.000 gn=0.237 t=24.8s vram=7.024GiB
+[fork_eps0.20_kl0.10] update 8/8 R=1.544 KL=0.00011 H=0.607 len=11 Lpi=0.0019 Lv=10.373 EV=-17.46 clip=0.000 gn=5.186 t=2.0s vram=7.024GiB
+[fork_eps0.20_kl0.10] done in 1.8 min, peak VRAM 7.024 GiB -> /kaggle/working/atml-pa2-llm-posttraining/outputs/task2_ppo/forks/eps0.20_kl0.10
+$ -m task2_ppo.evaluate --config configs/ppo.yaml --adapter outputs/task2_ppo/forks/eps0.20_kl0.10 --name fork_eps0.20_kl0.10
+[eval fork_eps0.20_kl0.10] adapter=outputs/task2_ppo/forks/eps0.20_kl0.10 prompts=165 max_new_tokens=768
+  eval batch 1/6 done
+  eval batch 2/6 done
+  eval batch 3/6 done
+  eval batch 4/6 done
+  eval batch 5/6 done
+  eval batch 6/6 done
+[eval fork_eps0.20_kl0.10] reward=1.828±0.094 KL=0.00002 H=0.939 len=305.7±255.3 trunc=0.067
+$ -m task2_ppo.continue_train --config configs/ppo.yaml --run-name fork_eps0.50_kl0.10 --updates 8 --clip-epsilon 0.5 --kl-beta 0.1 --output outputs/task2_ppo/forks/eps0.50_kl0.10
+[fork_eps0.50_kl0.10] updates=8 prompts/update=1 ppo_epochs=2 eps=0.5 kl_beta=0.1 max_response=512 fp16_scaler=True dropout_off=104
+/kaggle/working/atml-pa2-llm-posttraining/task2_ppo/continue_train.py:193: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  "policy_loss": float(loss), "value_loss": float(v_loss),
+[fork_eps0.50_kl0.10] update 1/8 R=2.697 KL=0.00054 H=1.093 len=101 Lpi=-0.0003 Lv=7.688 EV=-4.07 clip=0.000 gn=0.749 t=6.7s vram=6.067GiB
+[fork_eps0.50_kl0.10] update 2/8 R=3.285 KL=0.00093 H=1.646 len=21 Lpi=-0.0011 Lv=24.968 EV=-9.89 clip=0.000 gn=1.484 t=2.2s vram=6.067GiB
+[fork_eps0.50_kl0.10] update 3/8 R=-1.328 KL=0.00228 H=0.570 len=19 Lpi=-0.0001 Lv=3.344 EV=-270.09 clip=0.000 gn=0.647 t=2.1s vram=6.067GiB
+[fork_eps0.50_kl0.10] update 4/8 R=2.168 KL=0.00004 H=1.450 len=250 Lpi=0.0000 Lv=3.678 EV=-3.05 clip=0.000 gn=0.299 t=13.9s vram=6.252GiB
+[fork_eps0.50_kl0.10] update 5/8 R=0.460 KL=0.00019 H=1.259 len=512 Lpi=0.0001 Lv=4.727 EV=-12.01 clip=0.000 gn=0.278 t=28.3s vram=7.024GiB
+[fork_eps0.50_kl0.10] update 6/8 R=2.514 KL=0.00016 H=0.914 len=512 Lpi=-0.0001 Lv=5.841 EV=-7.74 clip=0.000 gn=0.217 t=27.9s vram=7.024GiB
+[fork_eps0.50_kl0.10] update 7/8 R=2.721 KL=-0.00016 H=1.421 len=446 Lpi=-0.0002 Lv=4.202 EV=-3.55 clip=0.000 gn=0.237 t=24.7s vram=7.024GiB
+[fork_eps0.50_kl0.10] update 8/8 R=1.544 KL=0.00011 H=0.607 len=11 Lpi=0.0019 Lv=10.373 EV=-17.46 clip=0.000 gn=5.186 t=1.9s vram=7.024GiB
+[fork_eps0.50_kl0.10] done in 1.8 min, peak VRAM 7.024 GiB -> /kaggle/working/atml-pa2-llm-posttraining/outputs/task2_ppo/forks/eps0.50_kl0.10
+$ -m task2_ppo.evaluate --config configs/ppo.yaml --adapter outputs/task2_ppo/forks/eps0.50_kl0.10 --name fork_eps0.50_kl0.10
+[eval fork_eps0.50_kl0.10] adapter=outputs/task2_ppo/forks/eps0.50_kl0.10 prompts=165 max_new_tokens=768
+  eval batch 1/6 done
+  eval batch 2/6 done
+  eval batch 3/6 done
+  eval batch 4/6 done
+  eval batch 5/6 done
+  eval batch 6/6 done
+[eval fork_eps0.50_kl0.10] reward=1.828±0.094 KL=0.00002 H=0.939 len=305.7±255.3 trunc=0.067
+### exit=0 after 52.7 min

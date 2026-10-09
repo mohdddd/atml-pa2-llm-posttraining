@@ -1,0 +1,147 @@
+### 2026-10-09 11:32:07 GPU=1 CMD: bash task3_grpo/run_all.sh lane1 && bash task2_ppo/run_all.sh kl
+{'advantages_vs_manual_max_abs': 8.52214128155282e-08, 'advantages_group_means': [3.725290298461914e-09, 2.9802322387695312e-08, 0.0], 'zero_variance_group_advantages': [0.0, 0.0, 0.0, 0.0], 'starter_zero_variance_group_advantages': [-0.5381319689441202, -0.5381319689441202, -0.5381319689441202, -0.5381319689441202], 'starter_minus_manual_max_abs': 2.2695625316589596, 'interleaved_groups_max_abs_diff': 0.0, 'single_group_equals_starter': True, 'grpo_eps0.2_beta0.1_abs_diff': 0.0, 'dr_grpo_eps0.2_beta0.1_abs_diff': 0.0, 'grpo_eps0.05_beta0.0_abs_diff': 0.0, 'dr_grpo_eps0.05_beta0.0_abs_diff': 0.0, 'kl_zero_when_pi_eq_ref': True, 'kl_nonnegative': True, 'truncation_mask_ok': True, 'all_checks_pass': True}
+[standard] loss_type=grpo updates=20 prompts/update=1 K=4 epochs=1 eps=0.2 beta=0.1 max_completion=512 mask_truncated=True fp16_scaler=True
+/kaggle/working/atml-pa2-llm-posttraining/task3_grpo/continue_train.py:129: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  if abs(float(terms.sum()) - float(st["policy_term"])) > 1e-4 * max(1.0, abs(float(st["policy_term"]))):
+[standard] update 1/20 R=1.745 groupSD=0.732 uninf=0.00 KL=-0.00040 H=1.023 len=89 trunc=0.00 L=0.0000 gn=0.385 t=13.6s vram=6.574GiB
+[standard] update 2/20 R=3.069 groupSD=0.229 uninf=0.00 KL=0.00023 H=1.544 len=19 trunc=0.00 L=0.0000 gn=0.687 t=2.4s vram=6.574GiB
+[standard] update 3/20 R=-1.092 groupSD=0.187 uninf=0.00 KL=0.00059 H=0.757 len=32 trunc=0.00 L=-0.0000 gn=0.501 t=3.9s vram=6.574GiB
+[standard] update 4/20 R=2.801 groupSD=0.332 uninf=0.00 KL=0.00021 H=1.238 len=289 trunc=0.00 L=0.0000 gn=0.179 t=26.4s vram=9.459GiB
+[standard] update 5/20 R=0.178 groupSD=0.831 uninf=0.00 KL=0.00001 H=1.095 len=495 trunc=0.75 L=-0.3124 gn=0.077 t=30.6s vram=10.625GiB
+[standard] update 6/20 R=2.762 groupSD=0.318 uninf=0.00 KL=0.00029 H=1.046 len=497 trunc=0.75 L=-0.2604 gn=0.089 t=30.7s vram=10.625GiB
+[standard] update 7/20 R=2.469 groupSD=0.353 uninf=0.00 KL=0.00012 H=1.385 len=471 trunc=0.25 L=-0.4304 gn=0.112 t=32.3s vram=10.646GiB
+[standard] update 8/20 R=1.092 groupSD=0.072 uninf=0.00 KL=-0.00100 H=0.621 len=10 trunc=0.00 L=0.0000 gn=2.235 t=3.5s vram=10.646GiB
+[standard] update 9/20 R=2.495 groupSD=0.494 uninf=0.00 KL=-0.00015 H=1.064 len=362 trunc=0.25 L=0.0518 gn=0.169 t=32.2s vram=10.646GiB
+[standard] update 10/20 R=2.240 groupSD=0.353 uninf=0.00 KL=0.00004 H=1.047 len=288 trunc=0.00 L=-0.0000 gn=0.161 t=25.1s vram=10.646GiB
+[standard] update 11/20 R=1.820 groupSD=0.220 uninf=0.00 KL=0.00017 H=0.843 len=163 trunc=0.00 L=-0.0000 gn=0.181 t=11.8s vram=10.646GiB
+[standard] update 12/20 R=1.706 groupSD=1.299 uninf=0.00 KL=0.00011 H=0.826 len=438 trunc=0.50 L=-0.2317 gn=0.082 t=31.6s vram=10.646GiB
+[standard] update 13/20 R=2.112 groupSD=0.079 uninf=0.00 KL=0.00018 H=1.132 len=299 trunc=0.00 L=-0.0000 gn=0.149 t=27.2s vram=10.646GiB
+[standard] update 14/20 R=2.929 groupSD=0.200 uninf=0.00 KL=-0.00004 H=1.054 len=38 trunc=0.00 L=-0.0000 gn=0.488 t=5.1s vram=10.646GiB
+[standard] update 15/20 R=1.210 groupSD=0.863 uninf=0.00 KL=0.00012 H=1.155 len=512 trunc=1.00 L=0.0000 gn=0.000 t=31.3s vram=10.646GiB
+[standard] update 16/20 R=1.850 groupSD=0.651 uninf=0.00 KL=-0.00022 H=0.425 len=244 trunc=0.00 L=0.0000 gn=0.166 t=22.9s vram=10.646GiB
+[standard] update 17/20 R=1.545 groupSD=0.416 uninf=0.00 KL=0.00009 H=1.082 len=276 trunc=0.00 L=0.0000 gn=0.144 t=21.2s vram=10.646GiB
+[standard] update 18/20 R=0.310 groupSD=0.474 uninf=0.00 KL=0.00065 H=0.827 len=44 trunc=0.00 L=-0.0000 gn=0.538 t=5.0s vram=10.646GiB
+[standard] update 19/20 R=-0.856 groupSD=0.449 uninf=0.00 KL=-0.00010 H=1.623 len=40 trunc=0.00 L=0.0000 gn=0.766 t=4.4s vram=10.646GiB
+[standard] update 20/20 R=1.600 groupSD=0.236 uninf=0.00 KL=-0.00023 H=0.703 len=64 trunc=0.00 L=0.0000 gn=0.382 t=9.3s vram=10.646GiB
+[standard] done in 6.2 min, peak VRAM 10.646 GiB -> /kaggle/working/atml-pa2-llm-posttraining/outputs/task3_grpo/standard
+[eval midpoint] adapter=checkpoints/grpo_midpoint_policy prompts=165 max_new_tokens=768
+  eval batch 1/6 done
+  eval batch 2/6 done
+  eval batch 3/6 done
+  eval batch 4/6 done
+  eval batch 5/6 done
+  eval batch 6/6 done
+[eval midpoint] reward=1.805±0.096 KL=0.00003 H=0.946 len=303.0±253.7 trunc=0.073
+[eval standard] adapter=outputs/task3_grpo/standard prompts=165 max_new_tokens=768
+  eval batch 1/6 done
+  eval batch 2/6 done
+  eval batch 3/6 done
+  eval batch 4/6 done
+  eval batch 5/6 done
+  eval batch 6/6 done
+[eval standard] reward=1.746±0.099 KL=0.00008 H=0.943 len=302.6±254.4 trunc=0.085
+[eval sft] adapter=None prompts=165 max_new_tokens=768
+  eval batch 1/6 done
+  eval batch 2/6 done
+  eval batch 3/6 done
+  eval batch 4/6 done
+  eval batch 5/6 done
+  eval batch 6/6 done
+[eval sft] reward=1.816±0.091 KL=0.00000 H=0.969 len=309.3±256.7 trunc=0.109
+$ -m task3_grpo.continue_train --config configs/grpo.yaml --run-name fork_grpo --updates 8 --loss-type grpo --output outputs/task3_grpo/forks/grpo
+[fork_grpo] loss_type=grpo updates=8 prompts/update=1 K=4 epochs=1 eps=0.2 beta=0.1 max_completion=512 mask_truncated=True fp16_scaler=True
+/kaggle/working/atml-pa2-llm-posttraining/task3_grpo/continue_train.py:129: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  if abs(float(terms.sum()) - float(st["policy_term"])) > 1e-4 * max(1.0, abs(float(st["policy_term"]))):
+[fork_grpo] update 1/8 R=1.745 groupSD=0.732 uninf=0.00 KL=-0.00040 H=1.023 len=89 trunc=0.00 L=0.0000 gn=0.385 t=12.7s vram=6.574GiB
+[fork_grpo] update 2/8 R=3.147 groupSD=0.176 uninf=0.00 KL=0.00009 H=1.525 len=20 trunc=0.00 L=0.0000 gn=0.785 t=2.4s vram=6.574GiB
+[fork_grpo] update 3/8 R=-0.972 groupSD=0.227 uninf=0.00 KL=0.00050 H=0.768 len=34 trunc=0.00 L=-0.0000 gn=0.506 t=3.9s vram=6.574GiB
+[fork_grpo] update 4/8 R=2.656 groupSD=0.329 uninf=0.00 KL=0.00043 H=1.195 len=291 trunc=0.00 L=0.0000 gn=0.186 t=25.4s vram=9.207GiB
+[fork_grpo] update 5/8 R=0.166 groupSD=0.937 uninf=0.00 KL=0.00009 H=1.109 len=489 trunc=0.50 L=-0.4775 gn=0.117 t=32.3s vram=10.64GiB
+[fork_grpo] update 6/8 R=2.202 groupSD=0.294 uninf=0.00 KL=-0.00012 H=1.004 len=512 trunc=1.00 L=0.0000 gn=0.000 t=31.1s vram=10.64GiB
+[fork_grpo] update 7/8 R=2.454 groupSD=0.321 uninf=0.00 KL=0.00022 H=1.397 len=486 trunc=0.50 L=-0.4687 gn=0.126 t=32.7s vram=10.64GiB
+[fork_grpo] update 8/8 R=1.092 groupSD=0.072 uninf=0.00 KL=-0.00186 H=0.621 len=10 trunc=0.00 L=0.0000 gn=2.244 t=3.6s vram=10.64GiB
+[fork_grpo] done in 2.4 min, peak VRAM 10.64 GiB -> /kaggle/working/atml-pa2-llm-posttraining/outputs/task3_grpo/forks/grpo
+$ -m task3_grpo.evaluate --config configs/grpo.yaml --adapter outputs/task3_grpo/forks/grpo --name fork_grpo
+[eval fork_grpo] adapter=outputs/task3_grpo/forks/grpo prompts=165 max_new_tokens=768
+  eval batch 1/6 done
+  eval batch 2/6 done
+  eval batch 3/6 done
+  eval batch 4/6 done
+  eval batch 5/6 done
+  eval batch 6/6 done
+[eval fork_grpo] reward=1.776±0.098 KL=0.00001 H=0.952 len=304.6±256.1 trunc=0.091
+$ -m task3_grpo.continue_train --config configs/grpo.yaml --run-name fork_dr_grpo --updates 8 --loss-type dr_grpo --output outputs/task3_grpo/forks/dr_grpo
+[fork_dr_grpo] loss_type=dr_grpo updates=8 prompts/update=1 K=4 epochs=1 eps=0.2 beta=0.1 max_completion=512 mask_truncated=True fp16_scaler=True
+/kaggle/working/atml-pa2-llm-posttraining/task3_grpo/continue_train.py:129: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  if abs(float(terms.sum()) - float(st["policy_term"])) > 1e-4 * max(1.0, abs(float(st["policy_term"]))):
+[fork_dr_grpo] update 1/8 R=1.745 groupSD=0.732 uninf=0.00 KL=-0.00040 H=1.023 len=89 trunc=0.00 L=0.0828 gn=0.080 t=12.6s vram=6.574GiB
+[fork_dr_grpo] update 2/8 R=3.069 groupSD=0.229 uninf=0.00 KL=-0.00070 H=1.546 len=19 trunc=0.00 L=-0.0014 gn=0.023 t=2.3s vram=6.574GiB
+[fork_dr_grpo] update 3/8 R=-1.160 groupSD=0.245 uninf=0.00 KL=-0.00040 H=0.744 len=25 trunc=0.00 L=-0.0197 gn=0.045 t=3.6s vram=6.574GiB
+[fork_dr_grpo] update 4/8 R=2.801 groupSD=0.327 uninf=0.00 KL=0.00046 H=1.196 len=298 trunc=0.00 L=-0.1084 gn=0.095 t=25.4s vram=9.207GiB
+[fork_dr_grpo] update 5/8 R=0.724 groupSD=0.526 uninf=0.00 KL=-0.00010 H=1.149 len=483 trunc=0.50 L=-0.3211 gn=0.069 t=32.0s vram=10.64GiB
+[fork_dr_grpo] update 6/8 R=2.754 groupSD=0.257 uninf=0.00 KL=0.00016 H=1.048 len=497 trunc=0.75 L=-0.3687 gn=0.126 t=30.2s vram=10.64GiB
+[fork_dr_grpo] update 7/8 R=2.546 groupSD=0.480 uninf=0.00 KL=-0.00005 H=1.450 len=450 trunc=0.25 L=-0.3340 gn=0.086 t=32.5s vram=10.646GiB
+[fork_dr_grpo] update 8/8 R=1.092 groupSD=0.072 uninf=0.00 KL=-0.00276 H=0.620 len=10 trunc=0.00 L=0.0000 gn=0.048 t=3.5s vram=10.646GiB
+[fork_dr_grpo] done in 2.4 min, peak VRAM 10.646 GiB -> /kaggle/working/atml-pa2-llm-posttraining/outputs/task3_grpo/forks/dr_grpo
+$ -m task3_grpo.evaluate --config configs/grpo.yaml --adapter outputs/task3_grpo/forks/dr_grpo --name fork_dr_grpo
+[eval fork_dr_grpo] adapter=outputs/task3_grpo/forks/dr_grpo prompts=165 max_new_tokens=768
+  eval batch 1/6 done
+  eval batch 2/6 done
+  eval batch 3/6 done
+  eval batch 4/6 done
+  eval batch 5/6 done
+  eval batch 6/6 done
+[eval fork_dr_grpo] reward=1.837±0.094 KL=0.00011 H=0.955 len=306.5±257.4 trunc=0.061
+[norm grpo] rho(len, grad)=-0.782 share short/med/long=[0.749, 0.197, 0.054] heldout={'length_mean': 304.6182, 'kl_token_mean': 0.0, 'reward_mean': 1.7763}
+[norm dr_grpo] rho(len, grad)=0.395 share short/med/long=[0.209, 0.276, 0.515] heldout={'length_mean': 306.4606, 'kl_token_mean': 0.0001, 'reward_mean': 1.8365}
+KL forks: betas=[0.0, 0.2] at eps=0.2; beta=0.1 is the shared fork eps0.20_kl0.10
+$ -m task2_ppo.continue_train --config configs/ppo.yaml --run-name fork_eps0.20_kl0.00 --updates 8 --clip-epsilon 0.2 --kl-beta 0.0 --output outputs/task2_ppo/forks/eps0.20_kl0.00
+[fork_eps0.20_kl0.00] updates=8 prompts/update=1 ppo_epochs=2 eps=0.2 kl_beta=0.0 max_response=512 fp16_scaler=True dropout_off=104
+/kaggle/working/atml-pa2-llm-posttraining/task2_ppo/continue_train.py:193: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  "policy_loss": float(loss), "value_loss": float(v_loss),
+[fork_eps0.20_kl0.00] update 1/8 R=2.697 KL=0.00054 H=1.093 len=101 Lpi=-0.0006 Lv=7.691 EV=-4.07 clip=0.000 gn=0.746 t=6.6s vram=6.067GiB
+[fork_eps0.20_kl0.00] update 2/8 R=3.285 KL=0.00059 H=1.646 len=21 Lpi=0.0004 Lv=24.966 EV=-9.90 clip=0.000 gn=1.482 t=2.4s vram=6.067GiB
+[fork_eps0.20_kl0.00] update 3/8 R=-1.328 KL=0.00190 H=0.570 len=19 Lpi=0.0001 Lv=3.346 EV=-272.41 clip=0.000 gn=0.648 t=2.3s vram=6.067GiB
+[fork_eps0.20_kl0.00] update 4/8 R=2.168 KL=0.00011 H=1.451 len=250 Lpi=-0.0000 Lv=3.677 EV=-3.04 clip=0.000 gn=0.299 t=14.1s vram=6.252GiB
+[fork_eps0.20_kl0.00] update 5/8 R=0.460 KL=0.00025 H=1.259 len=512 Lpi=-0.0002 Lv=4.728 EV=-12.00 clip=0.000 gn=0.277 t=28.3s vram=7.024GiB
+[fork_eps0.20_kl0.00] update 6/8 R=2.674 KL=0.00020 H=0.975 len=512 Lpi=0.0000 Lv=5.917 EV=-8.01 clip=0.000 gn=0.206 t=28.6s vram=7.024GiB
+[fork_eps0.20_kl0.00] update 7/8 R=2.588 KL=-0.00035 H=1.451 len=377 Lpi=-0.0001 Lv=4.212 EV=-3.22 clip=0.000 gn=0.266 t=20.6s vram=7.024GiB
+[fork_eps0.20_kl0.00] update 8/8 R=1.544 KL=0.00334 H=0.608 len=11 Lpi=-0.0001 Lv=10.296 EV=-17.97 clip=0.000 gn=5.171 t=1.8s vram=7.024GiB
+[fork_eps0.20_kl0.00] done in 1.7 min, peak VRAM 7.024 GiB -> /kaggle/working/atml-pa2-llm-posttraining/outputs/task2_ppo/forks/eps0.20_kl0.00
+$ -m task2_ppo.evaluate --config configs/ppo.yaml --adapter outputs/task2_ppo/forks/eps0.20_kl0.00 --name fork_eps0.20_kl0.00
+[eval fork_eps0.20_kl0.00] adapter=outputs/task2_ppo/forks/eps0.20_kl0.00 prompts=165 max_new_tokens=768
+  eval batch 1/6 done
+  eval batch 2/6 done
+  eval batch 3/6 done
+  eval batch 4/6 done
+  eval batch 5/6 done
+  eval batch 6/6 done
+[eval fork_eps0.20_kl0.00] reward=1.866±0.095 KL=0.00004 H=0.934 len=303.2±251.8 trunc=0.061
+$ -m task2_ppo.continue_train --config configs/ppo.yaml --run-name fork_eps0.20_kl0.20 --updates 8 --clip-epsilon 0.2 --kl-beta 0.2 --output outputs/task2_ppo/forks/eps0.20_kl0.20
+[fork_eps0.20_kl0.20] updates=8 prompts/update=1 ppo_epochs=2 eps=0.2 kl_beta=0.2 max_response=512 fp16_scaler=True dropout_off=104
+/kaggle/working/atml-pa2-llm-posttraining/task2_ppo/continue_train.py:193: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  "policy_loss": float(loss), "value_loss": float(v_loss),
+[fork_eps0.20_kl0.20] update 1/8 R=2.697 KL=0.00054 H=1.093 len=101 Lpi=-0.0001 Lv=7.685 EV=-4.06 clip=0.000 gn=0.748 t=6.6s vram=6.067GiB
+[fork_eps0.20_kl0.20] update 2/8 R=3.285 KL=0.00173 H=1.646 len=21 Lpi=0.0001 Lv=24.956 EV=-9.86 clip=0.000 gn=1.477 t=2.2s vram=6.067GiB
+[fork_eps0.20_kl0.20] update 3/8 R=-1.328 KL=0.00053 H=0.571 len=19 Lpi=-0.0001 Lv=3.344 EV=-270.81 clip=0.000 gn=0.650 t=2.2s vram=6.067GiB
+[fork_eps0.20_kl0.20] update 4/8 R=2.168 KL=-0.00018 H=1.451 len=250 Lpi=-0.0000 Lv=3.677 EV=-3.04 clip=0.000 gn=0.299 t=13.4s vram=6.252GiB
+[fork_eps0.20_kl0.20] update 5/8 R=0.460 KL=-0.00003 H=1.259 len=512 Lpi=0.0000 Lv=4.727 EV=-12.03 clip=0.000 gn=0.278 t=27.5s vram=7.024GiB
+[fork_eps0.20_kl0.20] update 6/8 R=2.514 KL=0.00036 H=0.914 len=512 Lpi=0.0000 Lv=5.846 EV=-7.73 clip=0.000 gn=0.216 t=27.3s vram=7.024GiB
+[fork_eps0.20_kl0.20] update 7/8 R=2.621 KL=0.00023 H=1.425 len=368 Lpi=0.0002 Lv=4.207 EV=-2.61 clip=0.000 gn=0.264 t=19.7s vram=7.024GiB
+[fork_eps0.20_kl0.20] update 8/8 R=1.544 KL=0.00404 H=0.607 len=11 Lpi=-0.0019 Lv=10.257 EV=-17.85 clip=0.000 gn=5.190 t=1.8s vram=7.024GiB
+[fork_eps0.20_kl0.20] done in 1.7 min, peak VRAM 7.024 GiB -> /kaggle/working/atml-pa2-llm-posttraining/outputs/task2_ppo/forks/eps0.20_kl0.20
+$ -m task2_ppo.evaluate --config configs/ppo.yaml --adapter outputs/task2_ppo/forks/eps0.20_kl0.20 --name fork_eps0.20_kl0.20
+[eval fork_eps0.20_kl0.20] adapter=outputs/task2_ppo/forks/eps0.20_kl0.20 prompts=165 max_new_tokens=768
+  eval batch 1/6 done
+  eval batch 2/6 done
+  eval batch 3/6 done
+  eval batch 4/6 done
+  eval batch 5/6 done
+  eval batch 6/6 done
+[eval fork_eps0.20_kl0.20] reward=1.904±0.094 KL=-0.00000 H=0.947 len=309.6±257.4 trunc=0.055
+### exit=0 after 67.8 min

@@ -1,0 +1,31 @@
+{
+  "n_train_file": 1200,
+  "n_eligible": 944,
+  "n_dropped": 256,
+  "updates": [
+    [
+      "b70ebc9bc95bf8332673d0762848d1005ba550cdfeea97b46887e2c1ac794f92"
+    ],
+    [
+      "5ecbed0e67a312888917844226da7f1681314d867338b82c81b0c7845d4c3510"
+    ],
+    [
+      "66d02a300fac38a49c06e0fe08f4a039cd6cf597c39d5d3cc5e1b64968f70fbd"
+    ],
+    [
+      "184b5777cf166a9f4970d3170e88a14b9855c477b326041a5ad9387695b3934e"
+    ],
+    [
+      "1181f1e92b8199b3987cc50ad50416fce096e3d1bebd05a402147b348b535732"
+    ],
+    [
+      "108b1eac65d8a6ea8f4cc0ac367e236e01a85c57ba634318bc6a2888edf0726b"
+    ],
+    [
+      "7fcfdb83d492d05da0ce1f5f91203752b5bdaed59b37d24084c684773be7e67b"
+    ],
+    [
+      "03a9535da588c06b47cbdc298748e0f71a651e1f391c49bf96f05027382aee23"
+    ]
+  ]
+}

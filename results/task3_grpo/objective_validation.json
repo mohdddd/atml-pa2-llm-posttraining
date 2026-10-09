@@ -1,0 +1,31 @@
+{
+  "advantages_vs_manual_max_abs": 8.52214128155282e-08,
+  "advantages_group_means": [
+    3.725290298461914e-09,
+    2.9802322387695312e-08,
+    0.0
+  ],
+  "zero_variance_group_advantages": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "starter_zero_variance_group_advantages": [
+    -0.5381319689441202,
+    -0.5381319689441202,
+    -0.5381319689441202,
+    -0.5381319689441202
+  ],
+  "starter_minus_manual_max_abs": 2.2695625316589596,
+  "interleaved_groups_max_abs_diff": 0.0,
+  "single_group_equals_starter": true,
+  "grpo_eps0.2_beta0.1_abs_diff": 0.0,
+  "dr_grpo_eps0.2_beta0.1_abs_diff": 0.0,
+  "grpo_eps0.05_beta0.0_abs_diff": 0.0,
+  "dr_grpo_eps0.05_beta0.0_abs_diff": 0.0,
+  "kl_zero_when_pi_eq_ref": true,
+  "kl_nonnegative": true,
+  "truncation_mask_ok": true,
+  "all_checks_pass": true
+}

@@ -1,0 +1,89 @@
+{
+  "eps_0.05_matches_manual": true,
+  "eps_0.05_starter_minus_manual": -0.09151048012722421,
+  "eps_0.05_clip_fraction_definition_ok": true,
+  "eps_0.05_diagnostics": {
+    "clip_fraction": 0.9189189076423645,
+    "affected_fraction": 0.4054054021835327,
+    "surrogate_clipped": -0.024093270994364677,
+    "surrogate_unclipped": 0.013574680650197084
+  },
+  "eps_0.2_matches_manual": true,
+  "eps_0.2_starter_minus_manual": -0.029075824548858632,
+  "eps_0.2_clip_fraction_definition_ok": true,
+  "eps_0.2_diagnostics": {
+    "clip_fraction": 0.4864864945411682,
+    "affected_fraction": 0.2702702581882477,
+    "surrogate_clipped": 0.0008065914477320518,
+    "surrogate_unclipped": 0.013574680650197084
+  },
+  "eps_0.5_matches_manual": true,
+  "eps_0.5_starter_minus_manual": 0.0,
+  "eps_0.5_clip_fraction_definition_ok": true,
+  "eps_0.5_diagnostics": {
+    "clip_fraction": 0.0,
+    "affected_fraction": 0.0,
+    "surrogate_clipped": 0.013574680650197084,
+    "surrogate_unclipped": 0.013574680650197084
+  },
+  "gradient_cases_eps_0.2": [
+    {
+      "A": 1.0,
+      "rho": 1.5,
+      "clip_binds": true,
+      "grad_fixed": 0.0,
+      "grad_expected": 0.0,
+      "grad_starter": -1.5
+    },
+    {
+      "A": 1.0,
+      "rho": 0.5,
+      "clip_binds": false,
+      "grad_fixed": -0.5,
+      "grad_expected": -0.5,
+      "grad_starter": 0.0
+    },
+    {
+      "A": -1.0,
+      "rho": 0.5,
+      "clip_binds": true,
+      "grad_fixed": 0.0,
+      "grad_expected": 0.0,
+      "grad_starter": 0.5
+    },
+    {
+      "A": -1.0,
+      "rho": 1.5,
+      "clip_binds": false,
+      "grad_fixed": 1.5,
+      "grad_expected": 1.5,
+      "grad_starter": 0.0
+    },
+    {
+      "A": 1.0,
+      "rho": 1.1,
+      "clip_binds": false,
+      "grad_fixed": -1.1,
+      "grad_expected": -1.1,
+      "grad_starter": -1.1
+    },
+    {
+      "A": -1.0,
+      "rho": 0.9,
+      "clip_binds": false,
+      "grad_fixed": 0.9,
+      "grad_expected": 0.9,
+      "grad_starter": 0.9
+    }
+  ],
+  "gradient_cases_all_match": true,
+  "starter_grad_nonzero_where_clip_binds": true,
+  "rho1_loss_equals_minus_mean_adv": true,
+  "rho1_clip_fraction_zero": true,
+  "gae_gamma1.0_lam0.95_max_abs_diff": 1.7763568394002505e-15,
+  "gae_gamma1.0_lam0.95_returns_ok": true,
+  "gae_gamma0.99_lam0.9_max_abs_diff": 8.881784197001252e-16,
+  "gae_gamma0.99_lam0.9_returns_ok": true,
+  "shaped_rewards_max_abs_diff": 0.0,
+  "all_checks_pass": true
+}
