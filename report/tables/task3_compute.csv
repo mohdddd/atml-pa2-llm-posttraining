@@ -1,0 +1,4 @@
+run,updates,loss_type,generated_tokens,wall_clock_min,peak_vram_gib,gpu,git_commit
+fork_dr_grpo,8,dr_grpo,7483,2.37,10.646,Tesla T4,6d616c911a05e658dc9dbafbb0389cc7900f54a7
+fork_grpo,8,grpo,7727,2.4,10.64,Tesla T4,6d616c911a05e658dc9dbafbb0389cc7900f54a7
+standard,20,grpo,18683,6.18,10.646,Tesla T4,6d616c911a05e658dc9dbafbb0389cc7900f54a7

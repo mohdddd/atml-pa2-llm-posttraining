@@ -1,0 +1,7 @@
+run,updates,clip_epsilon,kl_beta,generated_tokens,wall_clock_min,peak_vram_gib,gpu,git_commit
+fork_eps0.05_kl0.10,8,0.05,0.1,1872,1.77,7.024,Tesla T4,6d616c911a05e658dc9dbafbb0389cc7900f54a7
+fork_eps0.20_kl0.00,8,0.2,0.0,1803,1.75,7.024,Tesla T4,6d616c911a05e658dc9dbafbb0389cc7900f54a7
+fork_eps0.20_kl0.10,8,0.2,0.1,1872,1.8,7.024,Tesla T4,6d616c911a05e658dc9dbafbb0389cc7900f54a7
+fork_eps0.20_kl0.20,8,0.2,0.2,1794,1.68,7.024,Tesla T4,6d616c911a05e658dc9dbafbb0389cc7900f54a7
+fork_eps0.50_kl0.10,8,0.5,0.1,1872,1.8,7.024,Tesla T4,6d616c911a05e658dc9dbafbb0389cc7900f54a7
+standard,20,0.2,0.1,5112,4.69,7.025,Tesla T4,6d616c911a05e658dc9dbafbb0389cc7900f54a7
