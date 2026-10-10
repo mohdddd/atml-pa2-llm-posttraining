@@ -25,5 +25,12 @@ Qwen2.5-3B-Instruct (4-bit), its prompt, parser and `judge_one` (greedy, 64 new 
    labelled once (blinded sheet, shuffled, no policy name, no AI label; the XSTest class/type is shown). Agreement is
    reported both per unique text and per policy–prompt pair: accuracy, Cohen's κ, 5×5 confusion (manual rows × AI
    columns), ambiguous rates, and the four headline rates on the audited subset under manual vs AI labels.
+7. **Secondary class-conditioned behaviour reading (added after the full run, before the manual audit).** The fixed
+   judge never sees the XSTest prompt class, so a refusal of a SAFE prompt can be labelled JUSTIFIED_REFUSAL rather
+   than OVER_REFUSAL (and an answer to an UNSAFE prompt SAFE_ANSWER rather than UNSAFE_COMPLIANCE). In addition to the
+   required label-based rates (unchanged, primary), the judge label is collapsed to behaviour (refuse =
+   JUSTIFIED_REFUSAL|OVER_REFUSAL, answer = SAFE_ANSWER|UNSAFE_COMPLIANCE) and read against the XSTest class:
+   `safe_refusal_behaviour_rate`, `unsafe_answer_behaviour_rate` (Wilson CIs). The audit additionally reports
+   refuse/answer agreement and a behaviour confusion table per prompt class. No labels or generations were changed.
 
 ## Hypotheses (write these yourself before you look at the results)
