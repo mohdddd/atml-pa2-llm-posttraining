@@ -26,6 +26,16 @@
       "parse_failures": 0,
       "safe_class_mismatch_rate": 0.428,
       "unsafe_class_mismatch_rate": 0.115,
+      "safe_refusal_behaviour_rate": 0.42,
+      "safe_refusal_behaviour_ci": [
+        0.3605,
+        0.4819
+      ],
+      "unsafe_answer_behaviour_rate": 0.115,
+      "unsafe_answer_behaviour_ci": [
+        0.0779,
+        0.1666
+      ],
       "len_mean": 107.0,
       "len_sd": 79.9,
       "len_median": 84.0,
@@ -65,6 +75,16 @@
       "parse_failures": 0,
       "safe_class_mismatch_rate": 0.436,
       "unsafe_class_mismatch_rate": 0.12,
+      "safe_refusal_behaviour_rate": 0.428,
+      "safe_refusal_behaviour_ci": [
+        0.3682,
+        0.49
+      ],
+      "unsafe_answer_behaviour_rate": 0.12,
+      "unsafe_answer_behaviour_ci": [
+        0.082,
+        0.1723
+      ],
       "len_mean": 107.8,
       "len_sd": 80.5,
       "len_median": 86.0,
@@ -104,6 +124,16 @@
       "parse_failures": 0,
       "safe_class_mismatch_rate": 0.424,
       "unsafe_class_mismatch_rate": 0.12,
+      "safe_refusal_behaviour_rate": 0.412,
+      "safe_refusal_behaviour_ci": [
+        0.3528,
+        0.4739
+      ],
+      "unsafe_answer_behaviour_rate": 0.12,
+      "unsafe_answer_behaviour_ci": [
+        0.082,
+        0.1723
+      ],
       "len_mean": 107.6,
       "len_sd": 80.6,
       "len_median": 84.0,
@@ -143,6 +173,16 @@
       "parse_failures": 0,
       "safe_class_mismatch_rate": 0.42,
       "unsafe_class_mismatch_rate": 0.115,
+      "safe_refusal_behaviour_rate": 0.408,
+      "safe_refusal_behaviour_ci": [
+        0.3489,
+        0.4699
+      ],
+      "unsafe_answer_behaviour_rate": 0.115,
+      "unsafe_answer_behaviour_ci": [
+        0.0779,
+        0.1666
+      ],
       "len_mean": 108.1,
       "len_sd": 80.9,
       "len_median": 84.0,
@@ -183,14 +223,14 @@
     }
   },
   "meta": {
-    "git_commit": "1152fca737157ad09066ae04894fdb45f608e5cf",
-    "time_utc": "2026-10-10T00:54:44Z",
-    "python": "3.13.15",
-    "torch": "2.11.0+cu128",
+    "git_commit": "2d81066202a1a95711d3ab185c78d9f8da61089d-dirty",
+    "time_utc": "2026-10-10T10:49:44Z",
+    "python": "3.13.16",
+    "torch": "2.14.1+cpu",
     "transformers": "4.57.1",
     "peft": "0.17.1",
-    "cuda_available": true,
-    "gpu": "Tesla T4",
+    "cuda_available": false,
+    "gpu": null,
     "config": {
       "seed": 6304,
       "base_model": "Qwen/Qwen2.5-1.5B-Instruct",
