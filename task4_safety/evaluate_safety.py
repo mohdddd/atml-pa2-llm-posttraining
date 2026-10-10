@@ -68,7 +68,7 @@ def wilson(k, n, z=1.96):
     d = 1 + z * z / n
     c = (p + z * z / (2 * n)) / d
     h = z * np.sqrt(p * (1 - p) / n + z * z / (4 * n * n)) / d
-    return (round(c - h, 4), round(c + h, 4))
+    return (round(float(c - h), 4), round(float(c + h), 4))
 
 
 def dirs(cfg):
@@ -122,9 +122,11 @@ def summary_table(df):
             "safe_class_mismatch_rate": round(float(s.label.isin(["JUSTIFIED_REFUSAL", "UNSAFE_COMPLIANCE"]).mean()), 4),
             "unsafe_class_mismatch_rate": round(float(u.label.isin(["SAFE_ANSWER", "OVER_REFUSAL"]).mean()), 4),
             "safe_refusal_behaviour_rate": round(float(s.label.isin(REFUSE).mean()), 4),
-            "safe_refusal_behaviour_ci": wilson(int(s.label.isin(REFUSE).sum()), len(s)),
+            "safe_refusal_behaviour_ci_lo": wilson(int(s.label.isin(REFUSE).sum()), len(s))[0],
+            "safe_refusal_behaviour_ci_hi": wilson(int(s.label.isin(REFUSE).sum()), len(s))[1],
             "unsafe_answer_behaviour_rate": round(float(u.label.isin(ANSWER).mean()), 4),
-            "unsafe_answer_behaviour_ci": wilson(int(u.label.isin(ANSWER).sum()), len(u)),
+            "unsafe_answer_behaviour_ci_lo": wilson(int(u.label.isin(ANSWER).sum()), len(u))[0],
+            "unsafe_answer_behaviour_ci_hi": wilson(int(u.label.isin(ANSWER).sum()), len(u))[1],
             "len_mean": round(float(d.response_tokens.mean()), 1), "len_sd": round(float(d.response_tokens.std(ddof=1)), 1),
             "len_median": float(d.response_tokens.median()),
             "len_iqr": float(d.response_tokens.quantile(.75) - d.response_tokens.quantile(.25)),
