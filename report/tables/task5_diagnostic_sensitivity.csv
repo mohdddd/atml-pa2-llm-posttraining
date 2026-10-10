@@ -1,0 +1,3 @@
+mechanism,S_reason,S_outcome,S_outcome_pooled_with_distractor,judge_position_A_rate_fixed_order,judge_unparsed_outputs_all_10_pairs,judge_unparsed_outputs_order_check,judge_order_consistency_controlled_pairs
+verifier,0.0,1.0,1.0,,,,
+judge,0.0,0.0,0.125,0.04,0.0,0.0,0.77

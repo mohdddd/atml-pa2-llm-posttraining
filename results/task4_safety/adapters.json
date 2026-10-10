@@ -1,0 +1,68 @@
+{
+  "dpo": {
+    "config_path": "outputs/task1_dpo/standard",
+    "source": "/kaggle/input/notebooks/mohammadkhan10/pa2-task1-run/atml-pa2-llm-posttraining/outputs/task1_dpo/standard",
+    "base_model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "lora_r": 8,
+    "target_modules": [
+      "v_proj",
+      "q_proj"
+    ],
+    "lora_B_frobenius_norm": 0.145658,
+    "sha256": {
+      "adapter_config.json": "b7c4427b92d1514135b9f3530e3fc9134a1f9f460f980c8798a22c7d5fd0d4ae",
+      "adapter_model.safetensors": "fd19620d7f97538fbf1a43208259cc83679946dd9af73662762a0a49e5e0b607",
+      "added_tokens.json": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+      "special_tokens_map.json": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+      "tokenizer.json": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+      "tokenizer_config.json": "d10d4ad57348e7bf9b899b6d9b3b9cf8209776b47803e754541ca275e03f2dd3",
+      "train_summary.json": "d0754b291ac9c9bcb3c3d3e097e916606fb383b9b8c6aece0367902e821601e3",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    },
+    "train_summary_found_next_to_adapter": true
+  },
+  "ppo": {
+    "config_path": "outputs/task2_ppo/standard",
+    "source": "/kaggle/input/notebooks/mohammadkhan10/pa2-task23-run/atml-pa2-llm-posttraining/outputs/task2_ppo/standard",
+    "base_model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "lora_r": 8,
+    "target_modules": [
+      "q_proj",
+      "v_proj"
+    ],
+    "lora_B_frobenius_norm": 0.025767,
+    "sha256": {
+      "adapter_config.json": "18993c388788ec14de72fd4f6f9ff86ce761ffc3aad5d0923b33f4365be03d97",
+      "adapter_model.safetensors": "7c4e7aa9fb706ec0870bac69fd81dec2d26684b0239c6a95aa2893549e2a0f53",
+      "added_tokens.json": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+      "special_tokens_map.json": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+      "tokenizer.json": "2f8796b7c00e52eff1c7d6b7f5278e6c92977ca084a42100c9b7c454110e79e1",
+      "tokenizer_config.json": "d10d4ad57348e7bf9b899b6d9b3b9cf8209776b47803e754541ca275e03f2dd3",
+      "train_summary.json": "35e63c3f1f0c5fe8e0707250bcd927a6ba079a85537944efe6c0bb2657530697",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    },
+    "train_summary_found_next_to_adapter": true
+  },
+  "grpo": {
+    "config_path": "outputs/task3_grpo/standard",
+    "source": "/kaggle/input/notebooks/mohammadkhan10/pa2-task23-run/atml-pa2-llm-posttraining/outputs/task3_grpo/standard",
+    "base_model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "lora_r": 8,
+    "target_modules": [
+      "v_proj",
+      "q_proj"
+    ],
+    "lora_B_frobenius_norm": 0.02346,
+    "sha256": {
+      "adapter_config.json": "b7c4427b92d1514135b9f3530e3fc9134a1f9f460f980c8798a22c7d5fd0d4ae",
+      "adapter_model.safetensors": "5ac1d36dd625d06378fad4c709c6ec146239607bc7a7ade0c9ee00133fad6feb",
+      "added_tokens.json": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+      "special_tokens_map.json": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+      "tokenizer.json": "2f8796b7c00e52eff1c7d6b7f5278e6c92977ca084a42100c9b7c454110e79e1",
+      "tokenizer_config.json": "d10d4ad57348e7bf9b899b6d9b3b9cf8209776b47803e754541ca275e03f2dd3",
+      "train_summary.json": "6cd1e9d6c819484430c883050795adec929c78fea252b4066bf78894967aa657",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    },
+    "train_summary_found_next_to_adapter": true
+  }
+}
