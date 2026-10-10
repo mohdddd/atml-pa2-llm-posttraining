@@ -1,0 +1,220 @@
+{
+  "dataset": "gsm",
+  "policies": {
+    "sft": {
+      "n": 300,
+      "accuracy": 0.2833,
+      "accuracy_sem": 0.0261,
+      "format_compliance": 0.3567,
+      "len_mean": 275.6,
+      "len_sd": 86.0,
+      "len_median": 263.5,
+      "len_iqr": 117.75,
+      "truncation_rate": 0.0167,
+      "failure_types": {
+        "correct": 85,
+        "wrong_final": 22,
+        "no_final_format": 188,
+        "no_final_truncated": 5
+      }
+    },
+    "rlvr": {
+      "n": 300,
+      "accuracy": 0.3033,
+      "accuracy_sem": 0.0266,
+      "format_compliance": 0.3767,
+      "len_mean": 275.0,
+      "len_sd": 87.7,
+      "len_median": 260.5,
+      "len_iqr": 116.75,
+      "truncation_rate": 0.0233,
+      "failure_types": {
+        "correct": 91,
+        "wrong_final": 22,
+        "no_final_format": 180,
+        "no_final_truncated": 7
+      },
+      "accuracy_diff_vs_sft": [
+        0.02,
+        -0.0033,
+        0.0433
+      ]
+    },
+    "rlaif": {
+      "n": 300,
+      "accuracy": 0.2867,
+      "accuracy_sem": 0.0262,
+      "format_compliance": 0.3633,
+      "len_mean": 274.9,
+      "len_sd": 85.6,
+      "len_median": 261.0,
+      "len_iqr": 118.25,
+      "truncation_rate": 0.02,
+      "failure_types": {
+        "correct": 86,
+        "wrong_final": 23,
+        "no_final_format": 185,
+        "no_final_truncated": 6
+      },
+      "accuracy_diff_vs_sft": [
+        0.0033,
+        -0.0167,
+        0.0233
+      ]
+    }
+  },
+  "pairwise": {
+    "rlvr_vs_sft": {
+      "n": 300,
+      "win_rate_a": 0.495,
+      "wins_a": 6,
+      "ties": 285,
+      "losses_a": 9,
+      "ties_unparsed": 0,
+      "win_rate_a_identical_as_tie": 0.4967,
+      "identical_text": 236,
+      "judge_on_identical_text": {
+        "A": 3,
+        "B": 4,
+        "TIE": 229
+      },
+      "verifier_judge_agreement_3way": 0.9133,
+      "verifier_decisive_n": 12,
+      "judge_agrees_when_verifier_decisive": 0.0,
+      "judge_ties_when_verifier_decisive": 0.9167,
+      "judge_opposite_when_verifier_decisive": 0.0833,
+      "verifier_tied_n": 288,
+      "judge_tie_when_verifier_tied": 0.9514
+    },
+    "rlaif_vs_sft": {
+      "n": 300,
+      "win_rate_a": 0.495,
+      "wins_a": 4,
+      "ties": 289,
+      "losses_a": 7,
+      "ties_unparsed": 0,
+      "win_rate_a_identical_as_tie": 0.4983,
+      "identical_text": 251,
+      "judge_on_identical_text": {
+        "A": 3,
+        "B": 5,
+        "TIE": 243
+      },
+      "verifier_judge_agreement_3way": 0.94,
+      "verifier_decisive_n": 9,
+      "judge_agrees_when_verifier_decisive": 0.1111,
+      "judge_ties_when_verifier_decisive": 0.8889,
+      "judge_opposite_when_verifier_decisive": 0.0,
+      "verifier_tied_n": 291,
+      "judge_tie_when_verifier_tied": 0.9656
+    },
+    "rlvr_vs_rlaif": {
+      "n": 300,
+      "win_rate_a": 0.4983,
+      "wins_a": 6,
+      "ties": 287,
+      "losses_a": 7,
+      "ties_unparsed": 0,
+      "win_rate_a_identical_as_tie": 0.5,
+      "identical_text": 231,
+      "judge_on_identical_text": {
+        "A": 3,
+        "B": 4,
+        "TIE": 224
+      },
+      "verifier_judge_agreement_3way": 0.9233,
+      "verifier_decisive_n": 11,
+      "judge_agrees_when_verifier_decisive": 0.0,
+      "judge_ties_when_verifier_decisive": 0.9091,
+      "judge_opposite_when_verifier_decisive": 0.0909,
+      "verifier_tied_n": 289,
+      "judge_tie_when_verifier_tied": 0.9585
+    }
+  },
+  "note": "win_rate_a = AI pairwise win rate of the first policy against the second (win 1, tie 0.5, loss 0); SFT against itself is 0.5 by definition and is not judged.",
+  "meta": {
+    "git_commit": "1152fca737157ad09066ae04894fdb45f608e5cf",
+    "time_utc": "2026-10-10T00:40:55Z",
+    "python": "3.13.15",
+    "torch": "2.11.0+cu128",
+    "transformers": "4.57.1",
+    "peft": "0.17.1",
+    "cuda_available": true,
+    "gpu": "Tesla T4",
+    "config": {
+      "seed": 6304,
+      "base_model": "Qwen/Qwen2.5-1.5B-Instruct",
+      "reward_model": "yavuz-ai/qwen2.5-1.5b-rm-ultrafeedback",
+      "reward_tokenizer": "Qwen/Qwen2.5-1.5B-Instruct",
+      "ai_judge_model": "Qwen/Qwen2.5-3B-Instruct",
+      "value_model_init": "Qwen/Qwen2.5-0.5B-Instruct",
+      "dtype": "float16",
+      "quantize_frozen_models": true,
+      "lora": {
+        "r": 8,
+        "alpha": 16,
+        "dropout": 0.05,
+        "target_modules": [
+          "q_proj",
+          "v_proj"
+        ]
+      },
+      "value_lora": {
+        "r": 8,
+        "alpha": 16,
+        "dropout": 0.05,
+        "target_modules": [
+          "q_proj",
+          "v_proj"
+        ]
+      },
+      "generation": {
+        "temperature": 0.7,
+        "top_p": 0.9,
+        "do_sample": true
+      },
+      "paths": {
+        "dpo_standard_train": "data/dpo_standard_train.jsonl",
+        "dpo_standard_eval": "data/dpo_standard_eval.jsonl",
+        "dpo_length_train": "data/dpo_length_balanced_train.jsonl",
+        "dpo_length_eval": "data/dpo_length_stratified_eval.jsonl",
+        "word_limit_prompts": "data/word_limit_prompts.jsonl",
+        "rl_prompt_train": "data/rl_prompt_pool_train.jsonl",
+        "rl_prompt_eval": "data/rl_prompt_pool_eval.jsonl",
+        "xstest": "data/xstest_safety_prompts.csv",
+        "gsm_train": "data/gsm8k_rl_train.jsonl",
+        "gsm_eval": "data/gsm8k_eval.jsonl",
+        "math_transfer_eval": "data/math_transfer_eval.jsonl",
+        "task5_diagnostics": "data/task5_controlled_reward_diagnostics.jsonl",
+        "ppo_rollout_cache": "cached/ppo_rollout.pt",
+        "grpo_k_cache": "cached/grpo_k_cache.jsonl",
+        "ppo_midpoint_policy": "checkpoints/ppo_midpoint_policy",
+        "ppo_midpoint_value": "checkpoints/ppo_midpoint_value",
+        "grpo_midpoint_policy": "checkpoints/grpo_midpoint_policy",
+        "rlvr_policy": "checkpoints/rlvr_policy",
+        "rlaif_policy": "checkpoints/rlaif_policy"
+      },
+      "results_dir": "results",
+      "safety_max_new_tokens": 256,
+      "math_max_new_tokens": 512,
+      "judge_max_new_tokens": 64,
+      "judge_temperature": 0.0,
+      "manual_audit_per_class": 30,
+      "policies": {
+        "sft": null,
+        "dpo": "outputs/task1_dpo/standard",
+        "ppo": "outputs/task2_ppo/standard",
+        "grpo": "outputs/task3_grpo/standard",
+        "rlvr": "checkpoints/rlvr_policy",
+        "rlaif": "checkpoints/rlaif_policy"
+      },
+      "safety_batch_size": 32,
+      "safety_max_prompt_length": 256,
+      "safety_limit_per_class": null,
+      "math_batch_size": 32,
+      "math_max_prompt_length": 512,
+      "math_limit": null,
+      "diagnostic_limit": null
+    }
+  }
+}

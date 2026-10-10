@@ -1,0 +1,4 @@
+dataset,policy,n,accuracy,accuracy_sem,format_compliance,len_mean,len_sd,len_median,len_iqr,truncation_rate,ai_win_rate_vs_sft,wins,ties,losses,acc_diff_vs_sft,acc_diff_ci_lo,acc_diff_ci_hi,ties_unparsed,win_rate_identical_as_tie,verifier_judge_agreement_3way,identical_text_vs_sft,acc_in_domain,win_in_domain,len_in_domain,accuracy_drop,win_rate_drop
+svamp,sft,100,0.43,0.0498,0.56,164.4,71.4,143.0,79.75,0.0,0.5,,,,0.0,,,,,,,0.2833,0.5,275.6,-0.1467,0.0
+svamp,rlvr,100,0.46,0.0501,0.59,163.6,72.1,140.0,79.25,0.0,0.52,12.0,80.0,8.0,0.03,-0.01,0.08,0.0,0.51,0.79,88.0,0.3033,0.495,275.0,-0.1567,-0.025
+svamp,rlaif,100,0.44,0.0499,0.57,163.7,72.3,140.0,79.25,0.0,0.515,12.0,79.0,9.0,0.01,-0.03,0.05,0.0,0.5,0.78,85.0,0.2867,0.495,274.9,-0.1533,-0.02

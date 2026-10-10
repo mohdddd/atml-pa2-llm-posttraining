@@ -1,0 +1,7 @@
+dataset,policy,correct,wrong_final,no_final_format,no_final_truncated
+gsm8k,sft,85,22,188,5
+gsm8k,rlvr,91,22,180,7
+gsm8k,rlaif,86,23,185,6
+svamp,sft,43,13,44,0
+svamp,rlvr,46,13,41,0
+svamp,rlaif,44,13,43,0

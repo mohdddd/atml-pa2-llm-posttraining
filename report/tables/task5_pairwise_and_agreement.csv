@@ -1,0 +1,7 @@
+dataset,comparison,n,win_rate_a,wins_a,ties,losses_a,ties_unparsed,win_rate_a_identical_as_tie,identical_text,verifier_judge_agreement_3way,verifier_decisive_n,judge_agrees_when_verifier_decisive,judge_ties_when_verifier_decisive,judge_opposite_when_verifier_decisive,verifier_tied_n,judge_tie_when_verifier_tied,judge_on_identical_A,judge_on_identical_B,judge_on_identical_TIE
+gsm8k,rlvr_vs_sft,300,0.495,6,285,9,0,0.4967,236,0.9133,12,0.0,0.9167,0.0833,288,0.9514,3,4,229
+gsm8k,rlaif_vs_sft,300,0.495,4,289,7,0,0.4983,251,0.94,9,0.1111,0.8889,0.0,291,0.9656,3,5,243
+gsm8k,rlvr_vs_rlaif,300,0.4983,6,287,7,0,0.5,231,0.9233,11,0.0,0.9091,0.0909,289,0.9585,3,4,224
+svamp,rlvr_vs_sft,100,0.52,12,80,8,0,0.51,88,0.79,5,0.4,0.6,0.0,95,0.8105,10,8,70
+svamp,rlaif_vs_sft,100,0.515,12,79,9,0,0.5,85,0.78,5,0.4,0.6,0.0,95,0.8,10,7,68
+svamp,rlvr_vs_rlaif,100,0.535,16,75,9,0,0.515,93,0.77,2,1.0,0.0,0.0,98,0.7653,12,8,73

@@ -1,0 +1,4 @@
+dataset,policy,n,accuracy,accuracy_sem,format_compliance,len_mean,len_sd,len_median,len_iqr,truncation_rate,ai_win_rate_vs_sft,wins,ties,losses,acc_diff_vs_sft,acc_diff_ci_lo,acc_diff_ci_hi,ties_unparsed,win_rate_identical_as_tie,verifier_judge_agreement_3way,identical_text_vs_sft
+gsm8k,sft,300,0.2833,0.0261,0.3567,275.6,86.0,263.5,117.75,0.0167,0.5,,,,0.0,,,,,,
+gsm8k,rlvr,300,0.3033,0.0266,0.3767,275.0,87.7,260.5,116.75,0.0233,0.495,6.0,285.0,9.0,0.02,-0.0033,0.0433,0.0,0.4967,0.9133,236.0
+gsm8k,rlaif,300,0.2867,0.0262,0.3633,274.9,85.6,261.0,118.25,0.02,0.495,4.0,289.0,7.0,0.0033,-0.0167,0.0233,0.0,0.4983,0.94,251.0

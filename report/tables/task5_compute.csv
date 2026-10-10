@@ -1,0 +1,10 @@
+dataset,stage,wall_s,peak_vram_gib,n,new_judge_calls
+gsm8k,generate_sft,297.9,3.705,300,
+gsm8k,generate_rlvr,323.3,3.679,300,
+gsm8k,generate_rlaif,325.2,3.71,300,
+gsm8k,pairwise_judge,246.3,2.39,900,418.0
+svamp,generate_sft,63.1,3.415,100,
+svamp,generate_rlvr,71.5,3.419,100,
+svamp,generate_rlaif,71.3,3.419,100,
+svamp,pairwise_judge,56.8,2.238,300,122.0
+diagnostics,judge+verifier,154.8,,20,

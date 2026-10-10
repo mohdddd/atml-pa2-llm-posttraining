@@ -1,0 +1,236 @@
+### 2026-10-10 00:09:46 GPU=1 CMD: bash task5_feedback/run_all.sh gpu
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+[gen gsm/sft] 32/300 (30s)
+[gen gsm/sft] 64/300 (55s)
+[gen gsm/sft] 96/300 (85s)
+[gen gsm/sft] 128/300 (114s)
+[gen gsm/sft] 160/300 (147s)
+[gen gsm/sft] 192/300 (179s)
+[gen gsm/sft] 224/300 (214s)
+[gen gsm/sft] 256/300 (249s)
+[gen gsm/sft] 288/300 (277s)
+[gen gsm/sft] 300/300 (298s)
+[gen gsm/sft] acc=0.283 format=0.357 len=275.6 297.9s peak 3.705 GiB
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+[gen gsm/rlvr] 32/300 (35s)
+[gen gsm/rlvr] 64/300 (67s)
+[gen gsm/rlvr] 96/300 (97s)
+[gen gsm/rlvr] 128/300 (127s)
+[gen gsm/rlvr] 160/300 (162s)
+[gen gsm/rlvr] 192/300 (196s)
+[gen gsm/rlvr] 224/300 (230s)
+[gen gsm/rlvr] 256/300 (265s)
+[gen gsm/rlvr] 288/300 (295s)
+[gen gsm/rlvr] 300/300 (323s)
+[gen gsm/rlvr] acc=0.303 format=0.377 len=275.0 323.3s peak 3.679 GiB
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+[gen gsm/rlaif] 32/300 (32s)
+[gen gsm/rlaif] 64/300 (61s)
+[gen gsm/rlaif] 96/300 (89s)
+[gen gsm/rlaif] 128/300 (119s)
+[gen gsm/rlaif] 160/300 (154s)
+[gen gsm/rlaif] 192/300 (188s)
+[gen gsm/rlaif] 224/300 (232s)
+[gen gsm/rlaif] 256/300 (268s)
+[gen gsm/rlaif] 288/300 (298s)
+[gen gsm/rlaif] 300/300 (325s)
+[gen gsm/rlaif] acc=0.287 format=0.363 len=274.9 325.2s peak 3.71 GiB
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+[gen transfer/sft] 32/100 (18s)
+[gen transfer/sft] 64/100 (38s)
+[gen transfer/sft] 96/100 (52s)
+[gen transfer/sft] 100/100 (63s)
+[gen transfer/sft] acc=0.430 format=0.560 len=164.4 63.1s peak 3.415 GiB
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+[gen transfer/rlvr] 32/100 (21s)
+[gen transfer/rlvr] 64/100 (42s)
+[gen transfer/rlvr] 96/100 (58s)
+[gen transfer/rlvr] 100/100 (71s)
+[gen transfer/rlvr] acc=0.460 format=0.590 len=163.6 71.5s peak 3.419 GiB
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+[gen transfer/rlaif] 32/100 (20s)
+[gen transfer/rlaif] 64/100 (42s)
+[gen transfer/rlaif] 96/100 (58s)
+[gen transfer/rlaif] 100/100 (71s)
+[gen transfer/rlaif] acc=0.440 format=0.570 len=163.7 71.3s peak 3.419 GiB
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+[judge gsm] rlvr vs sft: 50/300 (28s)
+[judge gsm] rlvr vs sft: 100/300 (59s)
+[judge gsm] rlvr vs sft: 150/300 (86s)
+[judge gsm] rlvr vs sft: 200/300 (116s)
+[judge gsm] rlvr vs sft: 250/300 (147s)
+[judge gsm] rlvr vs sft: 300/300 (176s)
+[judge gsm] rlaif vs sft: 50/300 (183s)
+[judge gsm] rlaif vs sft: 100/300 (190s)
+[judge gsm] rlaif vs sft: 150/300 (196s)
+[judge gsm] rlaif vs sft: 200/300 (203s)
+[judge gsm] rlaif vs sft: 250/300 (209s)
+[judge gsm] rlaif vs sft: 300/300 (217s)
+[judge gsm] rlvr vs rlaif: 50/300 (221s)
+[judge gsm] rlvr vs rlaif: 100/300 (227s)
+[judge gsm] rlvr vs rlaif: 150/300 (229s)
+[judge gsm] rlvr vs rlaif: 200/300 (234s)
+[judge gsm] rlvr vs rlaif: 250/300 (242s)
+[judge gsm] rlvr vs rlaif: 300/300 (246s)
+[judge gsm] 900 comparisons, 418 new judge calls, 246s
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+[judge transfer] rlvr vs sft: 50/100 (24s)
+[judge transfer] rlvr vs sft: 100/100 (47s)
+[judge transfer] rlaif vs sft: 50/100 (49s)
+[judge transfer] rlaif vs sft: 100/100 (50s)
+[judge transfer] rlvr vs rlaif: 50/100 (54s)
+[judge transfer] rlvr vs rlaif: 100/100 (57s)
+[judge transfer] 300 comparisons, 122 new judge calls, 57s
+Diagnostic problems: 20
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+[diag] problem 23 done (7s)
+[diag] problem 103 done (13s)
+[diag] problem 113 done (19s)
+[diag] problem 289 done (26s)
+[diag] problem 299 done (36s)
+[diag] problem 459 done (47s)
+[diag] problem 505 done (56s)
+[diag] problem 506 done (63s)
+[diag] problem 558 done (69s)
+[diag] problem 569 done (76s)
+[diag] problem 620 done (83s)
+[diag] problem 677 done (91s)
+[diag] problem 681 done (98s)
+[diag] problem 736 done (106s)
+[diag] problem 750 done (115s)
+[diag] problem 803 done (123s)
+[diag] problem 867 done (129s)
+[diag] problem 1122 done (141s)
+[diag] problem 1200 done (147s)
+[diag] problem 1245 done (155s)
+{
+ "sensitivity": {
+  "verifier": {
+   "S_reason": 0.0,
+   "S_outcome": 1.0,
+   "S_outcome_pooled_with_distractor": 1.0
+  },
+  "judge": {
+   "S_reason": 0.0,
+   "S_outcome": 0.0,
+   "S_outcome_pooled_with_distractor": 0.125
+  }
+ },
+ "pairs": {
+  "reasoning": {
+   "verifier": {
+    "better": 0.0,
+    "tie": 1.0,
+    "wrong": 0.0,
+    "n": 20
+   },
+   "judge": {
+    "better": 0.0,
+    "tie": 1.0,
+    "wrong": 0.0,
+    "n": 20
+   },
+   "order_consistency": 1.0
+  },
+  "outcome": {
+   "verifier": {
+    "better": 1.0,
+    "tie": 0.0,
+    "wrong": 0.0,
+    "n": 20
+   },
+   "judge": {
+    "better": 0.0,
+    "tie": 1.0,
+    "wrong": 0.0,
+    "n": 20
+   },
+   "order_consistency": 0.85
+  },
+  "filler": {
+   "verifier": {
+    "better": 0.0,
+    "tie": 1.0,
+    "wrong": 0.0,
+    "n": 20
+   },
+   "judge": {
+    "better": 0.0,
+    "tie": 0.75,
+    "wrong": 0.25,
+    "n": 20
+   },
+   "order_consistency": 0.75
+  },
+  "distractor": {
+   "verifier": {
+    "better": 1.0,
+    "tie": 0.0,
+    "wrong": 0.0,
+    "n": 20
+   },
+   "judge": {
+    "better": 0.25,
+    "tie": 0.7,
+    "wrong": 0.05,
+    "n": 20
+   },
+   "order_consistency": 0.4
+  },
+  "conflict": {
+   "verifier": {
+    "first": 1.0,
+    "tie": 0.0,
+    "second": 0.0,
+    "n": 20
+   },
+   "judge": {
+    "first": 0.05,
+    "tie": 0.95,
+    "second": 0.0,
+    "n": 20
+   },
+   "order_consistency": 0.85
+  }
+ }
+}
+variants: {"clean_correct": {"rlvr_mean": 1.0, "rlaif_group_reward_mean": 0.4938, "rlaif_group_reward_sd": 0.0858, "verifier_matches_expected": 20, "n": 20}, "corrupt_reasoning_correct_final": {"rlvr_mean": 1.0, "rlaif_group_reward_mean": 0.5, "rlaif_group_reward_sd": 0.0811, "verifier_matches_expected": 20, "n": 20}, "good_reasoning_wrong_final": {"rlvr_mean": 0.0, "rlaif_group_reward_mean": 0.475, "rlaif_group_reward_sd": 0.0513, "verifier_matches_expected": 20, "n": 20}, "persuasive_filler_correct": {"rlvr_mean": 1.0, "rlaif_group_reward_mean": 0.5875, "rlaif_group_reward_sd": 0.1351, "verifier_matches_expected": 20, "n": 20}, "gold_distractor_wrong_final": {"rlvr_mean": 0.0, "rlaif_group_reward_mean": 0.4437, "rlaif_group_reward_sd": 0.1432, "verifier_matches_expected": 20, "n": 20}}
+[gsm] sft   acc=0.283 format=0.357 len=275.6±86.0 trunc=0.017 {'correct': 85, 'wrong_final': 22, 'no_final_format': 188, 'no_final_truncated': 5}
+[gsm] rlvr  acc=0.303 format=0.377 len=275.0±87.7 trunc=0.023 {'correct': 91, 'wrong_final': 22, 'no_final_format': 180, 'no_final_truncated': 7}
+[gsm] rlaif acc=0.287 format=0.363 len=274.9±85.6 trunc=0.020 {'correct': 86, 'wrong_final': 23, 'no_final_format': 185, 'no_final_truncated': 6}
+[gsm] rlvr_vs_sft: win=0.495 (W6/T285[unparsed 0]/L9) win_identical_as_tie=0.4967 identical=236 agree3=0.9133 decisive n=12 agree=0.0
+[gsm] rlaif_vs_sft: win=0.495 (W4/T289[unparsed 0]/L7) win_identical_as_tie=0.4983 identical=251 agree3=0.94 decisive n=9 agree=0.1111
+[gsm] rlvr_vs_rlaif: win=0.4983 (W6/T287[unparsed 0]/L7) win_identical_as_tie=0.5 identical=231 agree3=0.9233 decisive n=11 agree=0.0
+[transfer] sft   acc=0.430 format=0.560 len=164.4±71.4 trunc=0.000 {'correct': 43, 'wrong_final': 13, 'no_final_format': 44, 'no_final_truncated': 0}
+[transfer] rlvr  acc=0.460 format=0.590 len=163.6±72.1 trunc=0.000 {'correct': 46, 'wrong_final': 13, 'no_final_format': 41, 'no_final_truncated': 0}
+[transfer] rlaif acc=0.440 format=0.570 len=163.7±72.3 trunc=0.000 {'correct': 44, 'wrong_final': 13, 'no_final_format': 43, 'no_final_truncated': 0}
+[transfer] rlvr_vs_sft: win=0.52 (W12/T80[unparsed 0]/L8) win_identical_as_tie=0.51 identical=88 agree3=0.79 decisive n=5 agree=0.4
+[transfer] rlaif_vs_sft: win=0.515 (W12/T79[unparsed 0]/L9) win_identical_as_tie=0.5 identical=85 agree3=0.78 decisive n=5 agree=0.4
+[transfer] rlvr_vs_rlaif: win=0.535 (W16/T75[unparsed 0]/L9) win_identical_as_tie=0.515 identical=93 agree3=0.77 decisive n=2 agree=1.0
+policy  accuracy  format_compliance  len_mean  len_sd  truncation_rate  ai_win_rate_vs_sft  acc_diff_vs_sft  acc_diff_ci_lo  acc_diff_ci_hi
+   sft    0.2833             0.3567     275.6    86.0           0.0167               0.500           0.0000             NaN             NaN
+  rlvr    0.3033             0.3767     275.0    87.7           0.0233               0.495           0.0200         -0.0033          0.0433
+ rlaif    0.2867             0.3633     274.9    85.6           0.0200               0.495           0.0033         -0.0167          0.0233
+policy  accuracy  accuracy_drop  ai_win_rate_vs_sft  win_rate_drop  len_mean
+   sft      0.43        -0.1467               0.500          0.000     164.4
+  rlvr      0.46        -0.1567               0.520         -0.025     163.6
+ rlaif      0.44        -0.1533               0.515         -0.020     163.7
+      pair            mechanism  n  better_rate  tie_rate  wrong_rate  prefers_first_rate  prefers_second_rate                            judge_order_A_shown_first                            judge_order_B_shown_first  judge_order_consistency  judge_ties_unparsed
+ reasoning  RLVR_exact_verifier 20         0.00      1.00        0.00                 NaN                  NaN                                                 None                                                 None                      NaN                  NaN
+ reasoning RLAIF_pairwise_judge 20         0.00      1.00        0.00                 NaN                  NaN   {"better": 0.0, "tie": 1.0, "wrong": 0.0, "n": 20}   {"better": 0.0, "tie": 1.0, "wrong": 0.0, "n": 20}                     1.00                  0.0
+   outcome  RLVR_exact_verifier 20         1.00      0.00        0.00                 NaN                  NaN                                                 None                                                 None                      NaN                  NaN
+   outcome RLAIF_pairwise_judge 20         0.00      1.00        0.00                 NaN                  NaN   {"better": 0.0, "tie": 1.0, "wrong": 0.0, "n": 20} {"better": 0.15, "tie": 0.85, "wrong": 0.0, "n": 20}                     0.85                  0.0
+    filler  RLVR_exact_verifier 20         0.00      1.00        0.00                 NaN                  NaN                                                 None                                                 None                      NaN                  NaN
+    filler RLAIF_pairwise_judge 20         0.00      0.75        0.25                 NaN                  NaN {"better": 0.15, "tie": 0.8, "wrong": 0.05, "n": 20} {"better": 0.0, "tie": 0.75, "wrong": 0.25, "n": 20}                     0.75                  0.0
+distractor  RLVR_exact_verifier 20         1.00      0.00        0.00                 NaN                  NaN                                                 None                                                 None                      NaN                  NaN
+distractor RLAIF_pairwise_judge 20         0.25      0.70        0.05                 NaN                  NaN {"better": 0.0, "tie": 0.85, "wrong": 0.15, "n": 20}   {"better": 0.5, "tie": 0.5, "wrong": 0.0, "n": 20}                     0.40                  0.0
+  conflict  RLVR_exact_verifier 20          NaN      0.00         NaN                1.00                  0.0                                                 None                                                 None                      NaN                  NaN
+  conflict RLAIF_pairwise_judge 20          NaN      0.95         NaN                0.05                  0.0   {"first": 0.0, "tie": 1.0, "second": 0.0, "n": 20} {"first": 0.15, "tie": 0.85, "second": 0.0, "n": 20}                     0.85                  0.0
+mechanism  S_reason  S_outcome  S_outcome_pooled_with_distractor  judge_position_A_rate_fixed_order  judge_unparsed_outputs_all_10_pairs  judge_unparsed_outputs_order_check  judge_order_consistency_controlled_pairs
+ verifier       0.0        1.0                             1.000                                NaN                                  NaN                                 NaN                                       NaN
+    judge       0.0        0.0                             0.125                               0.04                                  0.0                                 0.0                                      0.77
+shortlist: 80 candidates; tables -> /kaggle/working/atml-pa2-llm-posttraining/report/tables, figures -> /kaggle/working/atml-pa2-llm-posttraining/report/figures/task5
+### exit=0 after 31.7 min
