@@ -24,10 +24,5 @@ sampling temperature 0.7, top-p 0.9; seed 6304.
 7. **Held-out protocol:** identical to Task 2 (165 prompts, cap 768). Also evaluated: SFT (no adapter) and the
    supplied GRPO midpoint.
 
-## Hypotheses (student, written BEFORE the full run — fill in or delete; do not backdate)
-- Group size:
-- Normalisation:
-- Dominant instability without a critic:
-
 ## Known limitation found after the run
 Same held-out sampling-seed limitation as described in `task2_ppo/NOTES.md` (seed reset once, not per batch).

@@ -34,5 +34,3 @@ cache) · Controlled Reward Diagnostic Set (20 problems × 5 variants).
    scores byte-identical response pairs as ties instead of by the judge (the preflight showed the judge picking a
    side on identical texts); the primary win rate stays the fixed-judge protocol.
 8. **Paired accuracy differences vs SFT** with a 10 000-sample paired bootstrap (seed 6304).
-
-## Hypotheses (write these yourself before you look at the results)

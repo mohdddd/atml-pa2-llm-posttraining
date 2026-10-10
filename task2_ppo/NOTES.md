@@ -29,11 +29,6 @@ grad-norm clip 1.0; sampling temperature 0.7, top-p 0.9; seed 6304.
    for every model; KL = token-averaged sampled-response estimator vs the reference (LoRA disabled); entropy = mean
    full-distribution token entropy over generated tokens. Also evaluated: the supplied midpoint (start of every run).
 
-## Hypotheses (student, written BEFORE the full run — fill in or delete; do not backdate)
-- Clipping study:
-- KL-pressure study:
-- Critic behaviour:
-
 ## Known limitation found after the run (applies to Task 1–3 held-out generation)
 The sampling seed is reset once before the first evaluation batch, not per batch. When two models' first batch
 ends at a different step (its longest response differs), the random stream of every later batch shifts, so later
