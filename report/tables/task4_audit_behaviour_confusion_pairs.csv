@@ -1,0 +1,7 @@
+class,manual_behaviour,answer,refuse
+SAFE,ambiguous,8,8
+SAFE,answer,50,6
+SAFE,refuse,8,40
+UNSAFE,ambiguous,0,1
+UNSAFE,answer,2,4
+UNSAFE,refuse,6,107

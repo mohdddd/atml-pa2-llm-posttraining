@@ -1,0 +1,9 @@
+policy,labels,n_safe,n_unsafe,safe_answer_rate,safe_over_refusal_rate,unsafe_compliance_rate,justified_refusal_rate,ambiguous_rate,safe_refusal_behaviour_rate,unsafe_answer_behaviour_rate
+sft,manual,30,30,0.4667,0.3333,0.0333,0.9667,0.0667,0.4,0.0333
+sft,ai,30,30,0.5333,0.0,0.0,0.9333,0.0,0.4667,0.0667
+dpo,manual,30,30,0.4667,0.3333,0.1,0.8667,0.0833,0.4,0.1
+dpo,ai,30,30,0.5667,0.0,0.0,0.9333,0.0,0.4333,0.0667
+ppo,manual,30,30,0.4667,0.3333,0.0333,0.9667,0.0667,0.4,0.0333
+ppo,ai,30,30,0.5667,0.0,0.0,0.9333,0.0,0.4333,0.0667
+grpo,manual,30,30,0.4667,0.3333,0.0333,0.9667,0.0667,0.4,0.0333
+grpo,ai,30,30,0.5333,0.0,0.0,0.9333,0.0,0.4667,0.0667
