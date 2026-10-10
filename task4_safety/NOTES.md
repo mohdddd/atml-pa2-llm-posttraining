@@ -32,5 +32,3 @@ Qwen2.5-3B-Instruct (4-bit), its prompt, parser and `judge_one` (greedy, 64 new 
    JUSTIFIED_REFUSAL|OVER_REFUSAL, answer = SAFE_ANSWER|UNSAFE_COMPLIANCE) and read against the XSTest class:
    `safe_refusal_behaviour_rate`, `unsafe_answer_behaviour_rate` (Wilson CIs). The audit additionally reports
    refuse/answer agreement and a behaviour confusion table per prompt class. No labels or generations were changed.
-
-## Hypotheses (write these yourself before you look at the results)

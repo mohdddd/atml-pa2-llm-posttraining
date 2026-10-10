@@ -27,11 +27,6 @@ reward model yavuz-ai/qwen2.5-1.5b-rm-ultrafeedback (8-bit) · dtype float16.
    `common.metrics.word_limit_compliance`.
 8. **Held-out loss across β.** Reported at the model's own β and at a common β=0.10.
 
-## Hypotheses (write these yourself before the runs finish)
-- RQ1 (β vs fit / KL / reward, monotonic?):
-- RQ2 (dataset length bias vs. balanced training):
-- RQ3 (preference/reward vs. quality disagreements):
-
 ## Budget note
 Standard and length-balanced runs: 1 epoch (88 and 87 optimizer steps). β forks: 600 pairs (38 steps).
 These budgets differ by design; say so next to every comparison.
