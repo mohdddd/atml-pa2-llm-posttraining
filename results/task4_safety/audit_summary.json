@@ -128,8 +128,8 @@
   },
   "n_unlabelled_items": 0,
   "meta": {
-    "git_commit": "b9bef04e62a36c18e47147b871b5e5ee1e131361",
-    "time_utc": "2026-10-10T22:45:09Z",
+    "git_commit": "7bab2da926ef2828477bbf8e53b0e3ed12a4cd39-dirty",
+    "time_utc": "2026-10-10T22:45:44Z",
     "python": "3.13.16",
     "torch": "2.14.1+cpu",
     "transformers": "4.57.1",
