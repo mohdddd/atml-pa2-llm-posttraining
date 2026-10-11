@@ -1,0 +1,13 @@
+[
+ {"slot": "Task 1 (i) preference/reward vs quality disagreement", "pick_id": "T1i-gen-test_prefs:839", "handler": "t1_gen", "key": "test_prefs:839"},
+ {"slot": "Task 1 (ii) length bias / instruction compliance", "pick_id": "T1ii-standard-wl05#s2", "handler": "t1_wl", "key": "wl05#s2"},
+ {"slot": "Task 2 reward vs quality (high reward, truncated)", "pick_id": "T2-heldout_high-96c41d5b1b", "handler": "t2", "key": "96c41d5b1b"},
+ {"slot": "Task 2 reward vs quality (lowest reward, complete)", "pick_id": "T2-heldout_lowe-53169004e6", "handler": "t2", "key": "53169004e6"},
+ {"slot": "Task 3 normalisation / group informativeness", "pick_id": "T3-fork_grpo-u7g0", "handler": "t3", "key": ["fork_grpo", 7, 0]},
+ {"slot": "Task 4 harmful compliance", "pick_id": "T4-Q023", "handler": "t4", "key": "Q023"},
+ {"slot": "Task 4 justified refusal", "pick_id": "T4-Q064", "handler": "t4", "key": "Q064"},
+ {"slot": "Task 4 over-refusal", "pick_id": "T4-Q030", "handler": "t4", "key": "Q030"},
+ {"slot": "Task 5 reasoning-only corruption", "pick_id": "T5-reasoning-289", "handler": "t5", "key": ["reasoning", "289"]},
+ {"slot": "Task 5 persuasive filler", "pick_id": "T5-filler-569", "handler": "t5", "key": ["filler", "569"]},
+ {"slot": "Task 5 wrong final / gold distractor", "pick_id": "T5-distractor-113", "handler": "t5", "key": ["distractor", "113"]}
+]

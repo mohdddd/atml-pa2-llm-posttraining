@@ -84,10 +84,13 @@ bash task4_safety/run_all.sh audit     # CPU: judge/manual agreement tables
 ```
 CPU-only re-aggregation from saved files: `bash task4_safety/run_all.sh rates`, `bash task5_feedback/run_all.sh summary`.
 
-### Qualitative-example candidates (CPU, seconds)
+### Qualitative examples (CPU, seconds)
 ```bash
-python -m scripts.qualitative_shortlist   # results/qualitative/task{1,2,3}_shortlist.jsonl
-# Tasks 4/5 shortlists: results/task4_safety/qualitative_shortlist.jsonl, results/task5_feedback/qualitative_shortlist.jsonl
+python -m scripts.qualitative_shortlist   # candidates by fixed rules: results/qualitative/task{1,2,3}_shortlist.jsonl
+#   (Tasks 4/5 shortlists: results/task4_safety/qualitative_shortlist.jsonl, results/task5_feedback/qualitative_shortlist.jsonl)
+python -m scripts.example_picker          # offline page used to choose them: results/qualitative/example_picker.html
+python -m scripts.selected_examples       # the chosen examples (results/qualitative/picks.json) with full text, numbers
+                                          #   and source files: results/qualitative/{selected_examples.jsonl,SELECTED.md}
 ```
 
 ## 3. Where the results are
