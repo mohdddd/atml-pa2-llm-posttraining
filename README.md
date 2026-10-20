@@ -136,3 +136,5 @@ Design choices the manual leaves open are recorded per task in `task*/NOTES.md`;
 - **Datasets**: XSTest (Röttger et al., 2023), GSM8K (Cobbe et al., 2021), SVAMP (Patel et al., 2021), UltraFeedback
   (Cui et al., 2023).
 - **Tooling**: code was written with some LLM coding assistance.
+
+- Report submitted 20 October 2026.
