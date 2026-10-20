@@ -177,7 +177,7 @@ textarea{width:100%;box-sizing:border-box;height:220px;margin-top:8px;font:12px 
 </style></head><body><main>
 <h1>Qualitative example picker — PA2</h1>
 <p>Each section is one example the manual requires. Read the candidates, tick the one(s) you want, optionally type a short note.
-Then press <b>Copy my picks</b> and paste the text back to Claude (or keep it for writing the report).</p>
+Then press <b>Copy my picks</b> and keep the text for writing the report.</p>
 <div id="bar"><span id="count"></span><button onclick="exportPicks()">Copy my picks</button></div>
 <textarea id="out" readonly placeholder="Your picks appear here after you press the button."></textarea>
 <div id="root"></div></main>
