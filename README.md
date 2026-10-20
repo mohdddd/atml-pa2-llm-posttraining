@@ -135,5 +135,4 @@ Design choices the manual leaves open are recorded per task in `task*/NOTES.md`;
   scikit-learn (Cohen's kappa), matplotlib.
 - **Datasets**: XSTest (Röttger et al., 2023), GSM8K (Cobbe et al., 2021), SVAMP (Patel et al., 2021), UltraFeedback
   (Cui et al., 2023).
-- **Tooling**: code was written with LLM coding assistance, which the course permits; I reviewed and understand every
-  line. No external code was copied beyond the starter repository.
+- **Tooling**: code was written with some LLM coding assistance.
